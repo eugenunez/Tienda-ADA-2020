@@ -15,9 +15,7 @@ nav{
     justify-content: space-between;
     list-style:none;
     margin-top:0;
-    padding: 20px;
-    
-    
+    padding: 20px;   
 }
 .icon-brand{
     font-size: 20px;
@@ -45,8 +43,9 @@ header{
 }
 
 .filtros{
-    
-    width: 15%;
+    margin-left:10px;
+    width: 20%;
+    align-items: center;
   
 }
 .boton-limpiar{
@@ -63,7 +62,7 @@ header{
 
 .seccion-principal{
  
- width: 85%; 
+ width: 80%; 
  
 }
 .vista-productos{
@@ -120,15 +119,21 @@ h4{
 
 .fa-star{
     color:goldenrod;
+    padding-right:0;
    
 }
+ul{
+    list-style: none;
+    padding-left:0;
+ 
+}
+
 .boton-comprar{
     border:none;
     border-radius: 5px solid  rgb(199, 199, 247);
     background-color: rgb(199, 199, 247);
     font-size: medium;
     padding: 10px;
-
 }
 
 footer{
