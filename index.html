@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-
     <title>Document</title>
 </head>
 
@@ -23,54 +22,96 @@
     <section class="contenedor">
         <aside class="filtros">
             <form>
+                <h2>FILTROS</h2>
                 <div class="encabezado-filtro">
-                    <h2>FILTROS</h2>
-                    <p><button class="boton-limpiar"><i class="far fa-trash-alt icon-brand"></i>Limpiar</button></p>
-                </div>
                     <label>BÚSQUEDA
-                    <input type="text" />
+                        <input type="text" id="busqueda"/>
                     </label>
-        
-                    <ul><label>CATEGORÍA
-                    <li><input type="checkbox" name="productos" value="Aguas Florales" />AGUAS FLORALES</li>
-                    <li><input type="checkbox" name="productos" value="Aceites esenciales" /> ACEITES ESENCIALES</li>
-                    <li><input type="checkbox" name="productos" value="Cremas" /> CREMAS</li>
-                    <li><input type="checkbox" name="productos" value="Jabones" /> JABONES</li>
-                    <li><input type="checkbox" name="productos" value="Pasta dental" /> PASTA DENTAL</li>
-                    </label></ul>
-            
-                    <ul><label>PUNTAJE
-                        <li><input type="checkbox" name="puntaje" value="5 estrellas" />
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i><p>(5)</p></li>
-                       <li><input type="checkbox" name="puntaje" value="4 estrellas" />
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i><p>(4)</p></li>
-                        <li><input type="checkbox" name="puntaje" value="3 estrellas" />
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i><p>(3)</p></li>
-                        <li><input type="checkbox" name="puntaje" value="2 estrellas" />
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i><p>(2)</p></li>
-                       <li><input type="checkbox" name="puntaje" value="1 estrella" />
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i><p>(1)</p></li>
-                    </label></ul>
+                    <button class="boton-limpiar"><i class="far fa-trash-alt icon-brand"></i>Limpiar</button>
+                </div>
+
+                <h3 class="filtro-categoria">CATEGORÍA</h3>
+                <label>
+                    <input type="checkbox" name="productos" value="Aguas Florales" />
+                    AGUAS FLORALES
+                </label>
+
+                <label>
+                    <input type="checkbox" name="productos" value="Aceites esenciales" />
+                    ACEITES ESENCIALES
+                </label>
+
+                <label>
+                    <input type="checkbox" name="productos" value="Cremas" />
+                    CREMAS
+                </label>
+
+                <label>
+                    <input type="checkbox" name="productos" value="Jabones" />
+                    JABONES
+                </label>
+
+                <label>
+                    <input type="checkbox" name="productos" value="Pasta dental" />
+                    PASTA DENTAL
+                </label>
+
+                <h3 class="filtro-puntaje"> PUNTAJE </h3>
+                <label>
+                    <input type="checkbox" name="puntaje" value="5 estrellas" class="review-filtro" id="checkbox-5" />
+                    <div class="review">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                    </div>
+                    (5)
+                </label>
+                <label>
+                    <input type="checkbox" name="puntaje" value="4 estrellas" class="review-filtro" id="checkbox-4" />
+                    <div class="review">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="far fa-star" aria-hidden="true"></i>
+                        (4)
+                    </div>
+                </label>
+                <label>
+                    <input type="checkbox" name="puntaje" value="3 estrellas" class="review-filtro" id="checkbox-3" />
+                    <div class="review">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="far fa-star" aria-hidden="true"></i>
+                        <i class="far fa-star" aria-hidden="true"></i>
+                    </div>
+                    (3)
+                </label>
+                <label>
+                    <input type="checkbox" name="puntaje" value="2 estrellas" class="review-filtro" id="checkbox-2" />
+                    <div class="review">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="far fa-star" aria-hidden="true"></i>
+                        <i class="far fa-star" aria-hidden="true"></i>
+                        <i class="far fa-star" aria-hidden="true"></i>
+                    </div>
+                    (2)
+                </label>
+                <label>
+                    <input type="checkbox" name="puntaje" value="1 estrella" class="review-filtro" id="checkbox-1" />
+                    <div class="review">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="far fa-star" aria-hidden="true"></i>
+                        <i class="far fa-star" aria-hidden="true"></i>
+                        <i class="far fa-star" aria-hidden="true"></i>
+                        <i class="far fa-star" aria-hidden="true"></i>
+                    </div>
+                    (1)
+                </label>
             </form>
         </aside>
         <div class="seccion-principal">
@@ -79,7 +120,12 @@
                 <p>Ver como</p>
             </div>
             <div class="contenedor-tarjetas-productos">
-                <article class="tarjeta-producto">
+                <article 
+                class="tarjeta-producto"  
+                data-nombre="agua de rosas"
+                data-categoria="celulares"
+                data-precio="22499"
+                data-rating="4">
                     <img src="./imagenesTienda/agua-rosas.jpg" />
                     <h4>Agua de Rosas</h4>
                     <p>400$</p>
@@ -93,7 +139,12 @@
                     <button class="boton-comprar">COMPRAR</button>
                 </article>
 
-                <article class="tarjeta-producto">
+                <article 
+                class="tarjeta-producto"
+                data-nombre="agua de lavanda"
+                data-categoria="celulares"
+                data-precio="22499"
+                data-rating="4">
                     <img src="./imagenesTienda/agua-lavanda.jpg" />
                     <h4>Agua de Lavanda</h4>
                     <p>400$</p>
@@ -107,7 +158,12 @@
                     <button class="boton-comprar">COMPRAR</button>
                 </article>
 
-                <article class="tarjeta-producto">
+                <article 
+                class="tarjeta-producto"
+                data-nombre="crema humectante de aloe vera"
+                data-categoria="celulares"
+                data-precio="22499"
+                data-rating="4">
                     <img src="./imagenesTienda/crema-aloe-vera.jpg" />
                     <h4>Crema humectante de Aloe Vera</h4>
                     <p>500$</p>
@@ -121,7 +177,12 @@
                     <button class="boton-comprar">COMPRAR</button>
                 </article>
 
-                <article class="tarjeta-producto">
+                <article 
+                class="tarjeta-producto"
+                data-nombre="crema humectante citrica"
+                data-categoria="celulares"
+                data-precio="22499"
+                data-rating="4">
                     <img src="./imagenesTienda/crema-humectante-citrica.jpg" />
                     <h4>Crema humectante cítrica</h4>
                     <p>500$</p>
@@ -135,7 +196,12 @@
                     <button class="boton-comprar">COMPRAR</button>
                 </article>
 
-                <article class="tarjeta-producto">
+                <article 
+                class="tarjeta-producto"
+                data-nombre="crema exfoliante de calendula"
+                data-categoria="celulares"
+                data-precio="22499"
+                data-rating="4">
                     <img src="./imagenesTienda/crema-exfoliante-calendula.jpg" />
                     <h4>Crema exfoliante de Caléndula</h4>
                     <p>500$</p>
@@ -149,7 +215,12 @@
                     <button class="boton-comprar">COMPRAR</button>
                 </article>
 
-                <article class="tarjeta-producto">
+                <article 
+                class="tarjeta-producto"
+                data-nombre="pasta dental en polvo"
+                data-categoria="celulares"
+                data-precio="22499"
+                data-rating="4">
                     <img src="./imagenesTienda/pasta-dental-solida.jpg" />
                     <h4>Pasta dental en polvo</h4>
                     <p>250$</p>
@@ -163,7 +234,12 @@
                     <button class="boton-comprar">COMPRAR</button>
                 </article>
 
-                <article class="tarjeta-producto">
+                <article 
+                class="tarjeta-producto"
+                data-nombre="pasta dental en crema"
+                data-categoria="celulares"
+                data-precio="22499"
+                data-rating="4">
                     <img src="./imagenesTienda/pasta-dental-crema.jpg" />
                     <h4>Pasta dental en crema</h4>
                     <p>200$</p>
@@ -177,7 +253,12 @@
                     <button class="boton-comprar">COMPRAR</button>
                 </article>
 
-                <article class="tarjeta-producto">
+                <article 
+                class="tarjeta-producto"
+                data-nombre="jabon de coco"
+                data-categoria="celulares"
+                data-precio="22499"
+                data-rating="4">
                     <img src="./imagenesTienda/jabon-coco.jpg" />
                     <h4>Jabón de Coco</h4>
                     <p>200$</p>
@@ -191,7 +272,12 @@
                     <button class="boton-comprar">COMPRAR</button>
                 </article>
 
-                <article class="tarjeta-producto">
+                <article 
+                class="tarjeta-producto"
+                data-nombre="jabon de lavanda"
+                data-categoria="celulares"
+                data-precio="22499"
+                data-rating="4">
                     <img src="./imagenesTienda/jabon-lavanda.jpg" />
                     <h4>Jabón de Lavanda</h4>
                     <p>250$</p>
@@ -205,7 +291,12 @@
                     <button class="boton-comprar">COMPRAR</button>
                 </article>
 
-                <article class="tarjeta-producto">
+                <article 
+                class="tarjeta-producto"
+                data-nombre="jabon de calendula"
+                data-categoria="celulares"
+                data-precio="22499"
+                data-rating="4">
                     <img src="./imagenesTienda/jabon-calendula.jpg" />
                     <h4>Jabón de Caléndula</h4>
                     <p>300$</p>
@@ -219,7 +310,12 @@
                     <button class="boton-comprar">COMPRAR</button>
                 </article>
 
-                <article class="tarjeta-producto">
+                <article 
+                class="tarjeta-producto"
+                data-nombre="aceite de rosa mosqueta"
+                data-categoria="celulares"
+                data-precio="22499"
+                data-rating="4">
                     <img src="./imagenesTienda/aceite-rosa-mosqueta.jpg" />
                     <h4>Aceite de Rosa Mosqueta</h4>
                     <p>450$</p>
@@ -233,7 +329,12 @@
                     <button class="boton-comprar">COMPRAR</button>
                 </article>
 
-                <article class="tarjeta-producto">
+                <article 
+                class="tarjeta-producto"
+                data-nombre="aceite de jojoba"
+                data-categoria="celulares"
+                data-precio="22499"
+                data-rating="4">
                     <img src="./imagenesTienda/aceite-jojoba.jpg" />
                     <h4>Aceite de Jojoba</h4>
                     <p>500$</p>
@@ -256,7 +357,7 @@
                 class="fas fa-hand-holding-heart icon-brand"></i></p>
     </footer>
 
-<script src="index.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
