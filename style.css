@@ -89,32 +89,51 @@ label{
     background-color: rgb(199, 199, 247);
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content:space-around;
 }
 .tarjeta-producto{
     width: 300px;
-    height: 350px;
+    height: 450px;
     background-color:white;
     margin:10px;
+    display: flex;
     text-align: center;
     justify-content: center;
     align-items:center;
-    border-radius:20px;
-}
+    border-radius:20px; 
+    flex-direction: column;   
 
-img{
-    width: 150px;
-    height: 150px;
-    margin-top:30px;
-    border-radius:20px;
-    border:1px solid lightgrey;   
+}
+.imagen{
+    width: 200px;
+    height: 200px;
+    margin:20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+    
+
+}
+.imagen>img{
+    width: 100%;
+    height: auto;
+    transition: all 2s;
+    border-radius:20px; 
+    
+    
+  
+}
+img:hover{
+    transform:scale(1,2);
 }
 
 h4{
     margin-top:5px;
 }
 
-.tarjeta-producto p{
+.tarjeta-producto>p{
     margin:5px;
 }
 .hidden{
