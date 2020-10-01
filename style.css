@@ -28,6 +28,86 @@ nav{
     font-size: medium;
 }
 
+.menu-carrito{
+    display: none;
+
+}
+
+.menu-carrito-desplegable{
+    display: block;
+    transition:1s;
+    position:absolute;
+    top:0px;
+    right:0px;
+    background-color:white;
+    height:100%;
+    width:30%;
+    transform: translateX(431px);
+    z-index:1;
+    
+     
+}
+.mostrar-menu-carrito{
+    transform: translateX(0px); 
+
+}
+
+
+.titulos-carrito{
+    padding-top:20px;
+    display:flex;
+    flex-direction: row;
+    justify-content:space-around;
+    font-size:30px;
+}
+
+.comenzar-compra{
+    display:flex;
+    flex-direction: column;
+}  
+
+.fa-window-close{
+   font-size:30px;
+}
+
+.checkout{
+    display: none;
+}
+
+.menu-checkout{
+    
+    display: flex;
+    height: 100%;
+    width: 50%;
+    justify-content: space-around;
+    background-color:white;
+    position:absolute;
+    top:0px;
+    left:350px;
+    z-index: 2; 
+}
+.resumen{
+    display:flex;
+    flex-direction:column;
+    background-color: yellowgreen;
+    padding: 100px;
+}
+.mostrar-checkout{
+    transform: translateX(-400px); 
+
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    background-color: rgba(7, 7, 7, 0.7);
+    
+
+}
+.fa-search{
+    transform:translateX(-20px)
+}
+
 header{
     height: 250px;
     background-image: url(./imagenesTienda/fondo-header.jpg);
@@ -174,6 +254,7 @@ footer{
 }
 
 @media (max-width:600px){
+
     .filtros{
         display:none;
     }
@@ -197,4 +278,28 @@ footer{
 footer p{
     font-size: small;
 }
+
+
+
+.menu-carrito-desplegable{
+    width: 70%;
+    transform: translateX(0px);
+}
+
+.menu-checkout{
+    flex-direction:column;
+    width: 100%;
+    transform: translateX(0px);
+    left:0px;  
+}
+
+.datos-personales-pago{
+    margin-left: 30px;
+}
+.resumen{
+    padding:0px;  
+}
+
+.contenido-resumen{
+    margin-left:30px;
 }

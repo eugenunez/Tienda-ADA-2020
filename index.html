@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <title>Document</title>
+    <title>Tienda de Cosmética Natural</title>
 </head>
 
 <body>
@@ -16,6 +16,49 @@
             <li><button class="carrito"><i class="fas fa-shopping-cart icon-brand"></i>Carrito</button></li>
         </ul>
     </nav>
+
+    <div class="menu-carrito">
+       
+            <div class="titulos-carrito">
+            <h2>Carrito</h2>
+            <button class="cerrar-menu-carrito"><i class="far fa-window-close"></i></button>
+        </div>
+            <p>No tienes productos en el carrito, ¡agrega algunos!</p>
+            <div class="comenzar-compra">
+            <button class="abrir-modal">COMPRAR</button>
+            <button>VACIAR</button>
+        </div>
+        
+    </div>
+   
+    <div class="checkout">
+        <div class="datos-personales-pago">
+            <form>
+                <h2>Checkout</h2>
+                <h2>Datos personales</h2>
+                <label>Nombre y apellido*</label>
+                    <input type="text" name="nombre-apellido" placeholder="p.ej.:Ada Lovelace "/>
+                
+                <label>Email*</label>
+                    <input type="text" name="email" placeholder="p.ej.:adalovelace@gmail.com"/>
+                
+                <h2>Opciones de pago</h2>
+                <label><input type="radio" name="forma-pago"/>Efectivo/Débito</label>
+                <label><input type="radio"name="forma-pago" />Tarjeta de crédito</label>
+                <label><input type="checkbox" name="con-envio"/>Necesito envío</label>
+                <label><input type="checkbox" name="tarjeta-descuento"/>Tengo tarjeta de descuento</label>
+        </div>
+        <div class="resumen">
+            <div class="contenido-resumen">
+        <h2>Resumen</h2>
+        <h3>Subtotal:<span class="subtotal"></span></h3>
+        <h2>Total:<span class="total"></span></h2>
+    </div>
+    </div>
+    <button>SEGUIR COMPRANDO</button>
+     <button>FINALIZAR</button>
+    </div>
+
     <header>
         <h1>TIENDA DE COSMÉTICA NATURAL</h1>
     </header>
@@ -25,40 +68,42 @@
                 <h2>FILTROS</h2>
                 <div class="encabezado-filtro">
                     <label>BÚSQUEDA
-                        <input type="text" id="busqueda"/>
+                        <input type="text" id="busqueda" />
                     </label>
-                    <button class="boton-limpiar"><i class="far fa-trash-alt icon-brand"></i>Limpiar</button>
+                    <i class="fas fa-search"></i>
+                    <button type="button" class="boton-limpiar"><i
+                            class="far fa-trash-alt icon-brand"></i>Limpiar</button>
                 </div>
 
                 <h3 class="filtro-categoria">CATEGORÍA</h3>
                 <label>
-                    <input type="checkbox" name="productos" value="Aguas Florales" />
+                    <input type="checkbox" name="productos" value="aguas-florales" class="review-filtro" />
                     AGUAS FLORALES
                 </label>
 
                 <label>
-                    <input type="checkbox" name="productos" value="Aceites esenciales" />
+                    <input type="checkbox" name="productos" value="aceites-esenciales" class="review-filtro">
                     ACEITES ESENCIALES
                 </label>
 
                 <label>
-                    <input type="checkbox" name="productos" value="Cremas" />
+                    <input type="checkbox" name="productos" value="cremas" class="review-filtro" />
                     CREMAS
                 </label>
 
                 <label>
-                    <input type="checkbox" name="productos" value="Jabones" />
+                    <input type="checkbox" name="productos" value="jabones" class="review-filtro" />
                     JABONES
                 </label>
 
                 <label>
-                    <input type="checkbox" name="productos" value="Pasta dental" />
+                    <input type="checkbox" name="productos" value="pasta-dental" class="review-filtro" />
                     PASTA DENTAL
                 </label>
 
                 <h3 class="filtro-puntaje"> PUNTAJE </h3>
                 <label>
-                    <input type="checkbox" name="puntaje" value="5" class="review-filtro" id="checkbox-5" />
+                    <input type="checkbox" name="puntaje" value="5" class="revisar-filtro" id="checkbox-5" />
                     <div class="review">
                         <i class="fas fa-star" aria-hidden="true"></i>
                         <i class="fas fa-star" aria-hidden="true"></i>
@@ -69,7 +114,7 @@
                     (5)
                 </label>
                 <label>
-                    <input type="checkbox" name="puntaje" value="4" class="review-filtro" id="checkbox-4" />
+                    <input type="checkbox" name="puntaje" value="4" class="revisar-filtro" id="checkbox-4" />
                     <div class="review">
                         <i class="fas fa-star" aria-hidden="true"></i>
                         <i class="fas fa-star" aria-hidden="true"></i>
@@ -80,7 +125,7 @@
                     </div>
                 </label>
                 <label>
-                    <input type="checkbox" name="puntaje" value="3" class="review-filtro" id="checkbox-3" />
+                    <input type="checkbox" name="puntaje" value="3" class="revisar-filtro" id="checkbox-3" />
                     <div class="review">
                         <i class="fas fa-star" aria-hidden="true"></i>
                         <i class="fas fa-star" aria-hidden="true"></i>
@@ -91,7 +136,7 @@
                     (3)
                 </label>
                 <label>
-                    <input type="checkbox" name="puntaje" value="2" class="review-filtro" id="checkbox-2" />
+                    <input type="checkbox" name="puntaje" value="2" class="revisar-filtro" id="checkbox-2" />
                     <div class="review">
                         <i class="fas fa-star" aria-hidden="true"></i>
                         <i class="fas fa-star" aria-hidden="true"></i>
@@ -102,7 +147,7 @@
                     (2)
                 </label>
                 <label>
-                    <input type="checkbox" name="puntaje" value="1" class="review-filtro" id="checkbox-1" />
+                    <input type="checkbox" name="puntaje" value="1" class="revisar-filtro" id="checkbox-1" />
                     <div class="review">
                         <i class="fas fa-star" aria-hidden="true"></i>
                         <i class="far fa-star" aria-hidden="true"></i>
@@ -120,13 +165,9 @@
                 <p>Ver como</p>
             </div>
             <div class="contenedor-tarjetas-productos">
-                <article 
-                class="tarjeta-producto"  
-                data-nombre="agua de rosas"
-                data-categoria="aguas-florales"
-                data-precio="400"
-                data-rating="3">
-                   <div class="imagen"><img src="./imagenesTienda/agua-rosas.jpg" /></div>
+                <article class="tarjeta-producto" data-nombre="agua de rosas" data-categoria="aguas-florales"
+                    data-precio="400" data-rating="3">
+                    <div class="imagen"><img src="./imagenesTienda/agua-rosas.jpg" /></div>
                     <h4>Agua de Rosas</h4>
                     <p>400$</p>
                     <div class="rating">
@@ -139,13 +180,9 @@
                     <button class="boton-comprar">COMPRAR</button>
                 </article>
 
-                <article 
-                class="tarjeta-producto"
-                data-nombre="agua de lavanda"
-                data-categoria="aguas-florales"
-                data-precio="400"
-                data-rating="5">
-                <div class="imagen"><img src="./imagenesTienda/agua-lavanda.jpg" /></div>
+                <article class="tarjeta-producto" data-nombre="agua de lavanda" data-categoria="aguas-florales"
+                    data-precio="400" data-rating="5">
+                    <div class="imagen"><img src="./imagenesTienda/agua-lavanda.jpg" /></div>
                     <h4>Agua de Lavanda</h4>
                     <p>400$</p>
                     <div class="rating">
@@ -158,13 +195,9 @@
                     <button class="boton-comprar">COMPRAR</button>
                 </article>
 
-                <article 
-                class="tarjeta-producto"
-                data-nombre="crema humectante de aloe vera"
-                data-categoria="cremas"
-                data-precio="500"
-                data-rating="5">
-                <div class="imagen"><img src="./imagenesTienda/crema-aloe-vera.jpg" /></div>
+                <article class="tarjeta-producto" data-nombre="crema humectante de aloe vera" data-categoria="cremas"
+                    data-precio="500" data-rating="5">
+                    <div class="imagen"><img src="./imagenesTienda/crema-aloe-vera.jpg" /></div>
                     <h4>Crema humectante de Aloe Vera</h4>
                     <p>500$</p>
                     <div class="rating">
@@ -177,13 +210,9 @@
                     <button class="boton-comprar">COMPRAR</button>
                 </article>
 
-                <article 
-                class="tarjeta-producto"
-                data-nombre="crema humectante citrica"
-                data-categoria="cremas"
-                data-precio="500"
-                data-rating="2">
-                <div class="imagen"><img src="./imagenesTienda/crema-humectante-citrica.jpg" /></div>
+                <article class="tarjeta-producto" data-nombre="crema humectante citrica" data-categoria="cremas"
+                    data-precio="500" data-rating="2">
+                    <div class="imagen"><img src="./imagenesTienda/crema-humectante-citrica.jpg" /></div>
                     <h4>Crema humectante cítrica</h4>
                     <p>500$</p>
                     <div class="rating">
@@ -196,13 +225,9 @@
                     <button class="boton-comprar">COMPRAR</button>
                 </article>
 
-                <article 
-                class="tarjeta-producto"
-                data-nombre="crema exfoliante de calendula"
-                data-categoria="cremas"
-                data-precio="5"
-                data-rating="500">
-                <div class="imagen"><img src="./imagenesTienda/crema-exfoliante-calendula.jpg" /></div>
+                <article class="tarjeta-producto" data-nombre="crema exfoliante de calendula" data-categoria="cremas"
+                    data-precio="500" data-rating="5">
+                    <div class="imagen"><img src="./imagenesTienda/crema-exfoliante-calendula.jpg" /></div>
                     <h4>Crema exfoliante de Caléndula</h4>
                     <p>500$</p>
                     <div class="rating">
@@ -215,13 +240,9 @@
                     <button class="boton-comprar">COMPRAR</button>
                 </article>
 
-                <article 
-                class="tarjeta-producto"
-                data-nombre="pasta dental en polvo"
-                data-categoria="pasta-dental"
-                data-precio="250"
-                data-rating="1">
-                <div class="imagen"><img src="./imagenesTienda/pasta-dental-solida.jpg" /></div>
+                <article class="tarjeta-producto" data-nombre="pasta dental en polvo" data-categoria="pasta-dental"
+                    data-precio="250" data-rating="1">
+                    <div class="imagen"><img src="./imagenesTienda/pasta-dental-solida.jpg" /></div>
                     <h4>Pasta dental en polvo</h4>
                     <p>250$</p>
                     <div class="rating">
@@ -234,13 +255,9 @@
                     <button class="boton-comprar">COMPRAR</button>
                 </article>
 
-                <article 
-                class="tarjeta-producto"
-                data-nombre="pasta dental en crema"
-                data-categoria="pasta-dental"
-                data-precio="200"
-                data-rating="3">
-                <div class="imagen"><img src="./imagenesTienda/pasta-dental-crema.jpg" /></div>
+                <article class="tarjeta-producto" data-nombre="pasta dental en crema" data-categoria="pasta-dental"
+                    data-precio="200" data-rating="3">
+                    <div class="imagen"><img src="./imagenesTienda/pasta-dental-crema.jpg" /></div>
                     <h4>Pasta dental en crema</h4>
                     <p>200$</p>
                     <div class="rating">
@@ -253,13 +270,9 @@
                     <button class="boton-comprar">COMPRAR</button>
                 </article>
 
-                <article 
-                class="tarjeta-producto"
-                data-nombre="jabon de coco"
-                data-categoria="jabones"
-                data-precio="200"
-                data-rating="2">
-                <div class="imagen"><img src="./imagenesTienda/jabon-coco.jpg" /></div>
+                <article class="tarjeta-producto" data-nombre="jabon de coco" data-categoria="jabones" data-precio="200"
+                    data-rating="2">
+                    <div class="imagen"><img src="./imagenesTienda/jabon-coco.jpg" /></div>
                     <h4>Jabón de Coco</h4>
                     <p>200$</p>
                     <div class="rating">
@@ -272,13 +285,9 @@
                     <button class="boton-comprar">COMPRAR</button>
                 </article>
 
-                <article 
-                class="tarjeta-producto"
-                data-nombre="jabon de lavanda"
-                data-categoria="jabones"
-                data-precio="250"
-                data-rating="4">
-                <div class="imagen"><img src="./imagenesTienda/jabon-lavanda.jpg" /></div>
+                <article class="tarjeta-producto" data-nombre="jabon de lavanda" data-categoria="jabones"
+                    data-precio="250" data-rating="4">
+                    <div class="imagen"><img src="./imagenesTienda/jabon-lavanda.jpg" /></div>
                     <h4>Jabón de Lavanda</h4>
                     <p>250$</p>
                     <div class="rating">
@@ -291,13 +300,9 @@
                     <button class="boton-comprar">COMPRAR</button>
                 </article>
 
-                <article 
-                class="tarjeta-producto"
-                data-nombre="jabon de calendula"
-                data-categoria="jabones"
-                data-precio="300"
-                data-rating="3">
-                <div class="imagen"><img src="./imagenesTienda/jabon-calendula.jpg" /></div>
+                <article class="tarjeta-producto" data-nombre="jabon de calendula" data-categoria="jabones"
+                    data-precio="300" data-rating="3">
+                    <div class="imagen"><img src="./imagenesTienda/jabon-calendula.jpg" /></div>
                     <h4>Jabón de Caléndula</h4>
                     <p>300$</p>
                     <div class="rating">
@@ -310,13 +315,9 @@
                     <button class="boton-comprar">COMPRAR</button>
                 </article>
 
-                <article 
-                class="tarjeta-producto"
-                data-nombre="aceite de rosa mosqueta"
-                data-categoria="aceites-esenciales"
-                data-precio="450"
-                data-rating="4">
-                <div class="imagen"><img src="./imagenesTienda/aceite-rosa-mosqueta.jpg" /></div>
+                <article class="tarjeta-producto" data-nombre="aceite de rosa mosqueta"
+                    data-categoria="aceites-esenciales" data-precio="450" data-rating="4">
+                    <div class="imagen"><img src="./imagenesTienda/aceite-rosa-mosqueta.jpg" /></div>
                     <h4>Aceite de Rosa Mosqueta</h4>
                     <p>450$</p>
                     <div class="rating">
@@ -329,13 +330,9 @@
                     <button class="boton-comprar">COMPRAR</button>
                 </article>
 
-                <article 
-                class="tarjeta-producto"
-                data-nombre="aceite de jojoba"
-                data-categoria="aceites-esenciales"
-                data-precio="500"
-                data-rating="5">
-                <div class="imagen"><img src="./imagenesTienda/aceite-jojoba.jpg" /></div>
+                <article class="tarjeta-producto" data-nombre="aceite de jojoba" data-categoria="aceites-esenciales"
+                    data-precio="500" data-rating="5">
+                    <div class="imagen"><img src="./imagenesTienda/aceite-jojoba.jpg" /></div>
                     <h4>Aceite de Jojoba</h4>
                     <p>500$</p>8
                     <div class="rating">
