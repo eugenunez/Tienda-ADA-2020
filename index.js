@@ -147,7 +147,7 @@ const pasaFiltrosCheckboxsPuntaje = (tarjeta) => {
   }
 }
 
-for (let checkbox of filtroPuntaje){
+for (let checkbox of filtroPuntaje) {
   checkbox.oninput = () => {
     filtrarTarjetasCheckboxsPuntaje()
   }
@@ -166,38 +166,168 @@ const filtrarTarjetasCheckboxsPuntaje = () => {
 
 
 const pasaTodosLosFiltros = (tarjeta) => {
-  
-  if (pasaFiltrosInput(tarjeta) && pasaFiltrosCheckboxsCategoria(tarjeta) 
-  && pasaFiltrosCheckboxsPuntaje(tarjeta)) {
+
+  if (pasaFiltrosInput(tarjeta) && pasaFiltrosCheckboxsCategoria(tarjeta)
+    && pasaFiltrosCheckboxsPuntaje(tarjeta)) {
     return true
   }
 }
 
-const botonAbrirCarrito=document.querySelector(".carrito")
-const menuDesplegableCarrito=document.querySelector(".menu-carrito")
-const botonCerrarCarrito=document.querySelector(".cerrar-menu-carrito")
-const botonAbrirModal=document.querySelector(".abrir-modal")
-const menuCheckout=document.querySelector(".checkout")
+const botonAbrirCarrito = document.querySelector(".carrito")
+const menuDesplegableCarrito = document.querySelector(".menu-carrito")
+const botonCerrarCarrito = document.querySelector(".cerrar-menu-carrito")
+const botonAbrirModal = document.querySelector(".abrir-modal")
+const menuCheckout = document.querySelector(".checkout")
 
 
 
-botonAbrirCarrito.onclick=()=>{
+botonAbrirCarrito.onclick = () => {
   menuDesplegableCarrito.classList.add("menu-carrito-desplegable")
   menuDesplegableCarrito.classList.add("mostrar-menu-carrito")
-  
- 
+
 }
 
-botonCerrarCarrito.onclick=()=>{
+botonCerrarCarrito.onclick = () => {
   menuDesplegableCarrito.classList.remove("mostrar-menu-carrito")
-  
-}
 
-botonAbrirModal.onclick=()=>{
+}
+//CODIGO PARA CHECKOUT CARRITO
+
+const subtotal = document.querySelector('#subtotal');
+const total = document.querySelector('#total');
+const recargo = document.querySelector('#recargo');
+const radioTarjeta = document.querySelector('#tarjeta-credito');
+const radioEfectivo=document.querySelector("#efectivo-debito")
+const checkboxDescuento = document.querySelector('#descuento');
+const descuento = document.querySelector('.descuento');
+const checkboxEnvio = document.querySelector('#envio');
+const envio = document.querySelector('.envio');
+//const subtotalProductos = document.querySelectorAll('.product-price');
+const subtotalProductos = 5000;
+const gastoDeEnvio = 50;
+
+botonAbrirModal.onclick = () => {
   menuCheckout.classList.add("menu-checkout")
-
+  radioTarjeta.onclick()
 
 }
+
+radioTarjeta.onclick = () => {
+  if (estaChequeadoEnvio() && estaChequeadoDescuento()) {
+    subtotal.textContent = subtotalProductos
+    descuento.textContent = obtenerDescuento(subtotalProductos)
+    envio.textContent = gastoDeEnvio
+    recargo.textContent = obtenerRecargo(subtotalProductos)
+    total.textContent = subtotalProductos - obtenerDescuento(subtotalProductos) + gastoDeEnvio + obtenerRecargo(subtotalProductos)
+  }
+  else if (estaChequeadoEnvio() && !estaChequeadoDescuento()) {
+    subtotal.textContent = subtotalProductos
+    descuento.textContent = ""
+    envio.textContent = gastoDeEnvio
+    recargo.textContent = obtenerRecargo(subtotalProductos)
+    total.textContent = subtotalProductos + gastoDeEnvio + obtenerRecargo(subtotalProductos)
+  }
+  else if (!estaChequeadoEnvio() && estaChequeadoDescuento()) {
+    subtotal.textContent = subtotalProductos
+    descuento.textContent = obtenerDescuento(subtotalProductos)
+    envio.textContent = ""
+    recargo.textContent = obtenerRecargo(subtotalProductos)
+    total.textContent = subtotalProductos - obtenerDescuento(subtotalProductos) + obtenerRecargo(subtotalProductos)
+  }
+  else {
+    subtotal.textContent = subtotalProductos
+    descuento.textContent = ""
+    envio.textContent = ""
+    recargo.textContent = obtenerRecargo(subtotalProductos)
+    total.textContent = subtotalProductos + obtenerRecargo(subtotalProductos)
+  }
+}
+ radioEfectivo.onclick=()=>{
+    if (estaChequeadoEnvio() && estaChequeadoDescuento()) {
+      subtotal.textContent = subtotalProductos
+      descuento.textContent = obtenerDescuento(subtotalProductos)
+      envio.textContent = gastoDeEnvio
+      recargo.textContent =""
+      total.textContent = subtotalProductos - obtenerDescuento(subtotalProductos) + gastoDeEnvio 
+    }
+    else if (estaChequeadoEnvio() && !estaChequeadoDescuento()) {
+      subtotal.textContent = subtotalProductos
+      descuento.textContent = ""
+      envio.textContent = gastoDeEnvio
+      recargo.textContent = ""
+      total.textContent = subtotalProductos + gastoDeEnvio 
+    }
+    else if (!estaChequeadoEnvio() && estaChequeadoDescuento()) {
+      subtotal.textContent = subtotalProductos
+      descuento.textContent = obtenerDescuento(subtotalProductos)
+      envio.textContent = ""
+      recargo.textContent = ""
+      total.textContent = subtotalProductos - obtenerDescuento(subtotalProductos)
+    }
+    else {
+      subtotal.textContent = subtotalProductos
+      descuento.textContent = ""
+      envio.textContent = ""
+      recargo.textContent =""
+      total.textContent = subtotalProductos
+    }
+  }
+
+
+checkboxDescuento.oninput = () => {
+  if (estaChequeadoDescuento()) {
+    descuento.textContent = obtenerDescuento(subtotalProductos)
+    total.textContent = total.textContent - obtenerDescuento(subtotalProductos)
+  }
+  else {
+    descuento.textContent = ""
+    total.textContent = parseFloat(total.textContent) + obtenerDescuento(subtotalProductos)
+  }
+};
+
+checkboxEnvio.oninput = () => {
+  if (estaChequeadoEnvio()) {
+    envio.textContent = gastoDeEnvio;
+    total.textContent = parseFloat(total.textContent) + gastoDeEnvio
+  }
+  else {
+    envio.textContent = "";
+    total.textContent = total.textContent - gastoDeEnvio
+  }
+};
+
+
+const obtenerRecargo = (subtotalProductos) => {
+  const recargo = subtotalProductos * 0.1;
+  return recargo;
+};
+
+const obtenerDescuento = (subtotalProductos) => {
+  const descuento = subtotalProductos * 0.1;
+  return descuento
+};
+
+
+const obtenerTotalConEnvio = (subtotalProductos) => {
+  return subtotalProductos + gastoDeEnvio;
+};
+
+
+const estaChequeadoDescuento = () => {
+  if (checkboxDescuento.checked) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+const estaChequeadoEnvio = () => {
+  if (checkboxEnvio.checked) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
 
 

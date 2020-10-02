@@ -43,16 +43,19 @@
                     <input type="text" name="email" placeholder="p.ej.:adalovelace@gmail.com"/>
                 
                 <h2>Opciones de pago</h2>
-                <label><input type="radio" name="forma-pago"/>Efectivo/Débito</label>
-                <label><input type="radio"name="forma-pago" />Tarjeta de crédito</label>
-                <label><input type="checkbox" name="con-envio"/>Necesito envío</label>
-                <label><input type="checkbox" name="tarjeta-descuento"/>Tengo tarjeta de descuento</label>
+                <label><input type="radio" name="forma-pago"id="efectivo-debito"/>Efectivo/Débito</label>
+                <label><input type="radio"name="forma-pago" id="tarjeta-credito" checked/>Tarjeta de crédito</label>
+                <label><input type="checkbox" name="con-envio"id="envio"/>Necesito envío</label>
+                <label><input type="checkbox" name="tarjeta-descuento"id="descuento"/>Tengo tarjeta de descuento</label>
         </div>
         <div class="resumen">
             <div class="contenido-resumen">
         <h2>Resumen</h2>
-        <h3>Subtotal:<span class="subtotal"></span></h3>
-        <h2>Total:<span class="total"></span></h2>
+        <h3>Subtotal:$ <span id="subtotal"></span></h3>
+        <h3>Descuento:$<span class="descuento"></span></h3>
+        <h3>Envio:$<span class="envio"></span></h3>
+        <h3>Recargo:$<span id="recargo"></span></h3>
+        <h2>Total:$ <span id="total"></span></h2>
     </div>
     </div>
     <button>SEGUIR COMPRANDO</button>
