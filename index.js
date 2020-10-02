@@ -4,7 +4,6 @@ const tarjetas = document.getElementsByClassName("tarjeta-producto");
 const filtroCategoria = document.getElementsByClassName("review-filtro");
 const filtroPuntaje = document.querySelectorAll(".revisar-filtro");
 
-
 const mostrarTarjeta = (tarjeta) => {
   return tarjeta.classList.remove("hidden")
 }
@@ -179,8 +178,6 @@ const botonCerrarCarrito = document.querySelector(".cerrar-menu-carrito")
 const botonAbrirModal = document.querySelector(".abrir-modal")
 const menuCheckout = document.querySelector(".checkout")
 
-
-
 botonAbrirCarrito.onclick = () => {
   menuDesplegableCarrito.classList.add("menu-carrito-desplegable")
   menuDesplegableCarrito.classList.add("mostrar-menu-carrito")
@@ -209,7 +206,6 @@ const gastoDeEnvio = 50;
 botonAbrirModal.onclick = () => {
   menuCheckout.classList.add("menu-checkout")
   radioTarjeta.onclick()
-
 }
 
 radioTarjeta.onclick = () => {
@@ -273,7 +269,6 @@ radioTarjeta.onclick = () => {
     }
   }
 
-
 checkboxDescuento.oninput = () => {
   if (estaChequeadoDescuento()) {
     descuento.textContent = obtenerDescuento(subtotalProductos)
@@ -296,7 +291,6 @@ checkboxEnvio.oninput = () => {
   }
 };
 
-
 const obtenerRecargo = (subtotalProductos) => {
   const recargo = subtotalProductos * 0.1;
   return recargo;
@@ -306,7 +300,6 @@ const obtenerDescuento = (subtotalProductos) => {
   const descuento = subtotalProductos * 0.1;
   return descuento
 };
-
 
 const obtenerTotalConEnvio = (subtotalProductos) => {
   return subtotalProductos + gastoDeEnvio;
