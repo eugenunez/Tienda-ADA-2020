@@ -10,206 +10,200 @@
 </head>
 
 <body>
+    <!--Comienzo de la barra de navegacion-->
     <nav>
         <ul class="barra-navegacion">
-            <li><i class="fab fa-pagelines icon-brand"></i>NATURAL SHOP</li>
-            <li><button class="carrito"><i class="fas fa-shopping-cart icon-brand"></i>Carrito</button></li>
+            <li><i class="fab fa-pagelines iconos-navegacion"></i>NATURAL SHOP</li>
+            <li><button class="boton-carrito"><i class="fas fa-shopping-cart iconos-navegacion"></i>Carrito</button>
+            </li>
         </ul>
     </nav>
+    <!--Fin de la barra de navegacion-->
+    <!--Comienzo del menu carrito-->
 
     <div class="menu-carrito">
 
-        <div class="titulos-carrito">
-            <h2>Carrito</h2>
+        <div class="encabezado-carrito">
+            <h3>Carrito</h3>
             <button class="cerrar-menu-carrito"><i class="far fa-window-close"></i></button>
+            <p>No tienes productos en el carrito, ¡agrega algunos!</p>
         </div>
-        <p>No tienes productos en el carrito, ¡agrega algunos!</p>
+
         <div class="comenzar-compra">
-            <button class="abrir-modal">COMPRAR</button>
+            <button class="abrir-checkout">COMPRAR</button>
             <button>VACIAR</button>
         </div>
 
     </div>
+    <!--Fin del menu carrito-->
+    <!--Comienzo del checkout-->
 
     <div class="checkout">
-        
-            <div class="datos-personales-pago">
-                <form>
-                    <h2>Checkout</h2>
-                    <h2>Datos personales</h2>
-                    <label>Nombre y apellido*</label>
-                    <input type="text" name="nombre-apellido" placeholder="p.ej.:Ada Lovelace " />
+        <div class="contenedor">
+        <h2>Checkout</h2>
+       <div class="blabla">
+                <div class="datos-personales-pago">
+                    <form>
+                        <h2>Datos personales</h2>
+                        <label>Nombre y apellido*</label>
+                        <input type="text" name="nombre-apellido" placeholder="p.ej.:Ada Lovelace "
+                            class="input-text" />
 
-                    <label>Email*</label>
-                    <input type="text" name="email" placeholder="p.ej.:adalovelace@gmail.com" />
+                        <label>Email*</label>
+                        <input type="text" name="email" placeholder="p.ej.:adalovelace@gmail.com" class="input-text" />
 
-                    <h2>Opciones de pago</h2>
-                    <label><input type="radio" name="forma-pago" id="efectivo-debito" />Efectivo/Débito</label>
-                    <label><input type="radio" name="forma-pago" id="tarjeta-credito" checked />Tarjeta de
-                        crédito</label>
-                    <label><input type="checkbox" name="con-envio" id="envio" />Necesito envío</label>
-                    <label><input type="checkbox" name="tarjeta-descuento" id="descuento" />Tengo tarjeta de
-                        descuento</label>
-            </div>
-            <div class="resumen">
-                <div class="contenido-resumen">
-                    <h2>Resumen</h2>
-                    <h3>Subtotal:$ <span id="subtotal"></span></h3>
-                    <h3>Descuento:$<span class="descuento"></span></h3>
-                    <h3>Envio:$<span class="envio"></span></h3>
-                    <h3>Recargo:$<span id="recargo"></span></h3>
-                    <h2>Total:$ <span id="total"></span></h2>
-                <div class="botones-compra">
-                    <button>SEGUIR COMPRANDO</button>
-                    <button>FINALIZAR</button>
+                        <h2>Opciones de pago</h2>
+                        <label><input type="radio" name="forma-pago" id="efectivo-debito" />Efectivo/Débito</label>
+                        <label><input type="radio" name="forma-pago" id="tarjeta-credito" checked />Tarjeta de
+                            crédito</label>
+                        <label><input type="checkbox" name="con-envio" id="envio" />Necesito envío</label>
+                        <label><input type="checkbox" name="tarjeta-descuento" id="descuento" />Tengo tarjeta de
+                            descuento</label>
                 </div>
-                </div>
+                <div class="resumen">
+                    <div class="contenido-resumen">
+                        <h2>Resumen</h2>
+                        <h3>Subtotal:$ <span id="subtotal"></span></h3>
+                        <h3>Descuento:$<span class="descuento"></span></h3>
+                        <h3>Envio:$<span class="envio"></span></h3>
+                        <h3>Recargo:$<span id="recargo"></span></h3>
+                        <h2>Total:$<span id="total"></span></h2>
+                    </div>
+                    <div class="botones-compra">
+                        <button id="boton-seguir-compra">SEGUIR COMPRANDO</button>
+                        <button id="boton-finalizar">FINALIZAR</button>
+                    </div>
             </div>
-       </div>
+        </div>
     </div>
-    
-
+    </div>
+    <!--Fin del checkout-->
+    <!--Comienzo del header-->
     <header>
         <h1>TIENDA DE COSMÉTICA NATURAL</h1>
     </header>
-    <section class="contenedor">
-        <aside class="filtros">
-            <form>
-                <h2>FILTROS</h2>
-                <div class="encabezado-filtro">
-                    <label>BÚSQUEDA
-                        <input type="text" id="busqueda" />
+    <!--Fin del header-->
+    <!--Comienzo de seccion de filtros-->
+    <section class=contenedor-filtros-principal>
+        <section class="contenedor-filtros">
+            <aside class="filtros">
+                <form>
+                    <div class="encabezado-filtro">
+                        <h2>FILTROS</h2>
+                        <button type="button" class="boton-limpiar"><i class="far fa-trash-alt icon-brand"></i>
+                            Limpiar</button>
+                    </div>
+                    <div class="lupa">
+                        <label> BÚSQUEDA
+                            <input type="text" id="busqueda" />
+                        </label>
+                        <i class="fas fa-search"></i>
+                    </div>
+
+                    <h3 class="filtro-categoria">CATEGORÍA</h3>
+                    <label>
+                        <input type="checkbox" name="productos" value="aguas-florales" class="review-filtro" />
+                        AGUAS FLORALES
                     </label>
-                    <i class="fas fa-search"></i>
-                    <button type="button" class="boton-limpiar"><i
-                            class="far fa-trash-alt icon-brand"></i>Limpiar</button>
-                </div>
 
-                <h3 class="filtro-categoria">CATEGORÍA</h3>
-                <label>
-                    <input type="checkbox" name="productos" value="aguas-florales" class="review-filtro" />
-                    AGUAS FLORALES
-                </label>
+                    <label>
+                        <input type="checkbox" name="productos" value="aceites-esenciales" class="review-filtro">
+                        ACEITES ESENCIALES
+                    </label>
 
-                <label>
-                    <input type="checkbox" name="productos" value="aceites-esenciales" class="review-filtro">
-                    ACEITES ESENCIALES
-                </label>
+                    <label>
+                        <input type="checkbox" name="productos" value="cremas" class="review-filtro" />
+                        CREMAS
+                    </label>
 
-                <label>
-                    <input type="checkbox" name="productos" value="cremas" class="review-filtro" />
-                    CREMAS
-                </label>
+                    <label>
+                        <input type="checkbox" name="productos" value="jabones" class="review-filtro" />
+                        JABONES
+                    </label>
 
-                <label>
-                    <input type="checkbox" name="productos" value="jabones" class="review-filtro" />
-                    JABONES
-                </label>
+                    <label>
+                        <input type="checkbox" name="productos" value="pasta-dental" class="review-filtro" />
+                        PASTA DENTAL
+                    </label>
 
-                <label>
-                    <input type="checkbox" name="productos" value="pasta-dental" class="review-filtro" />
-                    PASTA DENTAL
-                </label>
-
-                <h3 class="filtro-puntaje"> PUNTAJE </h3>
-                <label>
-                    <input type="checkbox" name="puntaje" value="5" class="revisar-filtro" id="checkbox-5" />
-                    <div class="review">
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                    </div>
-                    (5)
-                </label>
-                <label>
-                    <input type="checkbox" name="puntaje" value="4" class="revisar-filtro" id="checkbox-4" />
-                    <div class="review">
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="far fa-star" aria-hidden="true"></i>
+                    <h3 class="filtro-puntaje"> PUNTAJE </h3>
+                    <label>
+                        <input type="checkbox" name="puntaje" value="5" class="revisar-filtro" id="checkbox-5" />
+                        <div class="review">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
+                        (5)
+                    </label>
+                    <label>
+                        <input type="checkbox" name="puntaje" value="4" class="revisar-filtro" id="checkbox-4" />
+                        <div class="review">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                        </div>
                         (4)
-                    </div>
-                </label>
-                <label>
-                    <input type="checkbox" name="puntaje" value="3" class="revisar-filtro" id="checkbox-3" />
-                    <div class="review">
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="far fa-star" aria-hidden="true"></i>
-                        <i class="far fa-star" aria-hidden="true"></i>
-                    </div>
-                    (3)
-                </label>
-                <label>
-                    <input type="checkbox" name="puntaje" value="2" class="revisar-filtro" id="checkbox-2" />
-                    <div class="review">
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="far fa-star" aria-hidden="true"></i>
-                        <i class="far fa-star" aria-hidden="true"></i>
-                        <i class="far fa-star" aria-hidden="true"></i>
-                    </div>
-                    (2)
-                </label>
-                <label>
-                    <input type="checkbox" name="puntaje" value="1" class="revisar-filtro" id="checkbox-1" />
-                    <div class="review">
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="far fa-star" aria-hidden="true"></i>
-                        <i class="far fa-star" aria-hidden="true"></i>
-                        <i class="far fa-star" aria-hidden="true"></i>
-                        <i class="far fa-star" aria-hidden="true"></i>
-                    </div>
-                    (1)
-                </label>
-            </form>
-        </aside>
-        <div class="seccion-principal">
+                    </label>
+                    <label>
+                        <input type="checkbox" name="puntaje" value="3" class="revisar-filtro" id="checkbox-3" />
+                        <div class="review">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                        </div>
+                        (3)
+                    </label>
+                    <label>
+                        <input type="checkbox" name="puntaje" value="2" class="revisar-filtro" id="checkbox-2" />
+                        <div class="review">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                        </div>
+                        (2)
+                    </label>
+                    <label>
+                        <input type="checkbox" name="puntaje" value="1" class="revisar-filtro" id="checkbox-1" />
+                        <div class="review">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                        </div>
+                        (1)
+                    </label>
+                </form>
+            </aside>
+        </section>
+        <!--Fin de seccion filtros-->
+        <!--Comienzo de seccion de productos en grilla-->
+        <section class="seccion-principal">
             <div class="vista-productos">
+                <div class="uno">
                 <p>Mostrando 12 producto(s) de 12</p>
+            </div>
+            <div class="dos">
                 <p>Ver como</p>
+                <button><i class="fas fa-th"></i></button>
+                <button><i class="fas fa-list"></i></button>
+            </div>
             </div>
             <div class="contenedor-tarjetas-productos">
-                <article class="tarjeta-producto" data-nombre="agua de rosas" data-categoria="aguas-florales"
-                    data-precio="400" data-rating="3">
-                    <div class="imagen"><img src="./imagenesTienda/agua-rosas.jpg" /></div>
-                    <h4>Agua de Rosas</h4>
-                    <p>400$</p>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                    <button class="boton-comprar">COMPRAR</button>
-                </article>
-
                 <article class="tarjeta-producto" data-nombre="agua de lavanda" data-categoria="aguas-florales"
                     data-precio="400" data-rating="5">
                     <div class="imagen"><img src="./imagenesTienda/agua-lavanda.jpg" /></div>
                     <h4>Agua de Lavanda</h4>
                     <p>400$</p>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <button class="boton-comprar">COMPRAR</button>
-                </article>
-
-                <article class="tarjeta-producto" data-nombre="crema humectante de aloe vera" data-categoria="cremas"
-                    data-precio="500" data-rating="5">
-                    <div class="imagen"><img src="./imagenesTienda/crema-aloe-vera.jpg" /></div>
-                    <h4>Crema humectante de Aloe Vera</h4>
-                    <p>500$</p>
                     <div class="rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -292,7 +286,7 @@
                         <i class="far fa-star"></i>
                         <i class="far fa-star"></i>
                     </div>
-                    <button class="boton-comprar">COMPRAR</button>
+                    <button class="boton-comprar-lista">COMPRAR</button>
                 </article>
 
                 <article class="tarjeta-producto" data-nombre="jabon de lavanda" data-categoria="jabones"
@@ -344,7 +338,7 @@
                     data-precio="500" data-rating="5">
                     <div class="imagen"><img src="./imagenesTienda/aceite-jojoba.jpg" /></div>
                     <h4>Aceite de Jojoba</h4>
-                    <p>500$</p>8
+                    <p>500$</p>
                     <div class="rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -354,16 +348,302 @@
                     </div>
                     <button class="boton-comprar">COMPRAR</button>
                 </article>
-
+                <article class="tarjeta-producto" data-nombre="agua de rosas" data-categoria="aguas-florales"
+                    data-precio="400" data-rating="3">
+                    <div class="imagen"><img src="./imagenesTienda/agua-rosas.jpg" /></div>
+                    <h4>Agua de Rosas</h4>
+                    <p>400$</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <button class="boton-comprar">COMPRAR</button>
+                </article>
+                <article class="tarjeta-producto" data-nombre="crema humectante de aloe vera" data-categoria="cremas"
+                    data-precio="500" data-rating="5">
+                    <div class="imagen"><img src="./imagenesTienda/crema-aloe-vera.jpg" /></div>
+                    <h4>Crema humectante de Aloe Vera</h4>
+                    <p>500$</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <button class="boton-comprar">COMPRAR</button>
+                </article>
             </div>
-        </div>
+            </div>
+            <div class="lista-productos-oculta">
+                <div class="lista-productos">
+                    <article class="tarjeta-producto-lista" data-nombre="agua de lavanda"
+                        data-categoria="aguas-florales" data-precio="400" data-rating="5">
+                        <div class="imagen"><img src="./imagenesTienda/agua-lavanda.jpg" /></div>
+                        <div class="informacion-tarjeta">
+                            <h4>Agua de Lavanda</h4>
+                            <p>400$</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, asperiores,
+                                distinctio perspiciatis quis, quidem voluptates velit esse inventore dolorem
+                                officiis culpa quas optio possimus voluptatum iure quod. Facere,
+                                cupiditate fugiat!</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <button class="boton-comprar-lista">COMPRAR</button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-producto-lista" data-nombre="crema humectante citrica"
+                        data-categoria="cremas" data-precio="500" data-rating="2">
+                        <div class="imagen"><img src="./imagenesTienda/crema-humectante-citrica.jpg" /></div>
+                        <div class="informacion-tarjeta">
+                            <h4>Crema humectante cítrica</h4>
+                            <p>500$</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, asperiores,
+                                distinctio perspiciatis quis, quidem voluptates velit esse inventore dolorem
+                                officiis culpa quas optio possimus voluptatum iure quod. Facere,
+                                cupiditate fugiat!</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <button class="boton-comprar-lista">COMPRAR</button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-producto-lista" data-nombre="crema exfoliante de calendula"
+                        data-categoria="cremas" data-precio="500" data-rating="5">
+                        <div class="imagen"><img src="./imagenesTienda/crema-exfoliante-calendula.jpg" /></div>
+                        <div class="informacion-tarjeta">
+                            <h4>Crema exfoliante de Caléndula</h4>
+                            <p>500$</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, asperiores,
+                                distinctio perspiciatis quis, quidem voluptates velit esse inventore dolorem
+                                officiis culpa quas optio possimus voluptatum iure quod. Facere,
+                                cupiditate fugiat!</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <button class="boton-comprar-lista">COMPRAR</button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-producto-lista" data-nombre="pasta dental en polvo"
+                        data-categoria="pasta-dental" data-precio="250" data-rating="1">
+                        <div class="imagen"><img src="./imagenesTienda/pasta-dental-solida.jpg" /></div>
+                        <div class="informacion-tarjeta">
+                            <h4>Pasta dental en polvo</h4>
+                            <p>250$</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, asperiores,
+                                distinctio perspiciatis quis, quidem voluptates velit esse inventore dolorem
+                                officiis culpa quas optio possimus voluptatum iure quod. Facere,
+                                cupiditate fugiat!</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <button class="boton-comprar-lista">COMPRAR</button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-producto-lista" data-nombre="pasta dental en crema"
+                        data-categoria="pasta-dental" data-precio="200" data-rating="3">
+                        <div class="imagen"><img src="./imagenesTienda/pasta-dental-crema.jpg" /></div>
+                        <div class="informacion-tarjeta">
+                            <h4>Pasta dental en crema</h4>
+                            <p>200$</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, asperiores,
+                                distinctio perspiciatis quis, quidem voluptates velit esse inventore dolorem
+                                officiis culpa quas optio possimus voluptatum iure quod. Facere,
+                                cupiditate fugiat!</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <button class="boton-comprar-lista">COMPRAR</button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-producto-lista" data-nombre="jabon de coco" data-categoria="jabones"
+                        data-precio="200" data-rating="2">
+                        <div class="imagen"><img src="./imagenesTienda/jabon-coco.jpg" /></div>
+                        <div class="informacion-tarjeta">
+                            <h4>Jabón de Coco</h4>
+                            <p>200$</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, asperiores,
+                                distinctio perspiciatis quis, quidem voluptates velit esse inventore dolorem
+                                officiis culpa quas optio possimus voluptatum iure quod. Facere,
+                                cupiditate fugiat!</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <button class="boton-comprar-lista">COMPRAR</button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-producto-lista" data-nombre="jabon de lavanda" data-categoria="jabones"
+                        data-precio="250" data-rating="4">
+                        <div class="imagen"><img src="./imagenesTienda/jabon-lavanda.jpg" /></div>
+                        <div class="informacion-tarjeta">
+                            <h4>Jabón de Lavanda</h4>
+                            <p>250$</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, asperiores,
+                                distinctio perspiciatis quis, quidem voluptates velit esse inventore dolorem
+                                officiis culpa quas optio possimus voluptatum iure quod. Facere,
+                                cupiditate fugiat!</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <button class="boton-comprar-lista">COMPRAR</button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-producto-lista" data-nombre="jabon de calendula" data-categoria="jabones"
+                        data-precio="300" data-rating="3">
+                        <div class="imagen"><img src="./imagenesTienda/jabon-calendula.jpg" /></div>
+                        <div class="informacion-tarjeta">
+                            <h4>Jabón de Caléndula</h4>
+                            <p>300$</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, asperiores,
+                                distinctio perspiciatis quis, quidem voluptates velit esse inventore dolorem
+                                officiis culpa quas optio possimus voluptatum iure quod. Facere,
+                                cupiditate fugiat!</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <button class="boton-comprar-lista">COMPRAR</button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-producto-lista" data-nombre="aceite de rosa mosqueta"
+                        data-categoria="aceites-esenciales" data-precio="450" data-rating="4">
+                        <div class="imagen"><img src="./imagenesTienda/aceite-rosa-mosqueta.jpg" /></div>
+                        <div class="informacion-tarjeta">
+                            <h4>Aceite de Rosa Mosqueta</h4>
+                            <p>450$</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, asperiores,
+                                distinctio perspiciatis quis, quidem voluptates velit esse inventore dolorem
+                                officiis culpa quas optio possimus voluptatum iure quod. Facere,
+                                cupiditate fugiat!</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <button class="boton-comprar-lista">COMPRAR</button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-producto-lista" data-nombre="aceite de jojoba"
+                        data-categoria="aceites-esenciales" data-precio="500" data-rating="5">
+                        <div class="imagen"><img src="./imagenesTienda/aceite-jojoba.jpg" /></div>
+                        <div class="informacion-tarjeta">
+                            <h4>Aceite de Jojoba</h4>
+                            <p>500$</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, asperiores,
+                                distinctio perspiciatis quis, quidem voluptates velit esse inventore dolorem
+                                officiis culpa quas optio possimus voluptatum iure quod. Facere,
+                                cupiditate fugiat!</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <button class="boton-comprar-lista">COMPRAR</button>
+                        </div>
+                    </article>
+                    <article class="tarjeta-producto-lista" data-nombre="agua de rosas" data-categoria="aguas-florales"
+                        data-precio="400" data-rating="3">
+                        <div class="imagen"><img src="./imagenesTienda/agua-rosas.jpg" /></div>
+                        <div class="informacion-tarjeta">
+                            <h4>Agua de Rosas</h4>
+                            <p>400$</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, asperiores,
+                                distinctio perspiciatis quis, quidem voluptates velit esse inventore dolorem
+                                officiis culpa quas optio possimus voluptatum iure quod. Facere,
+                                cupiditate fugiat!</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <button class="boton-comprar-lista">COMPRAR</button>
+                        </div>
+                    </article>
+                    <article class="tarjeta-producto-lista" data-nombre="crema humectante de aloe vera"
+                        data-categoria="cremas" data-precio="500" data-rating="5">
+                        <div class="imagen"><img src="./imagenesTienda/crema-aloe-vera.jpg" /></div>
+                        <div class="informacion-tarjeta">
+                            <h4>Crema humectante de Aloe Vera</h4>
+                            <p>500$</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, asperiores,
+                                distinctio perspiciatis quis, quidem voluptates velit esse inventore dolorem
+                                officiis culpa quas optio possimus voluptatum iure quod. Facere,
+                                cupiditate fugiat!</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <button class="boton-comprar-lista">COMPRAR</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
     </section>
+    <!--Fin de seccion de productos en grilla-->
 
+    <!--Comienzo de seccion de productos en lista-->
+
+    <!--Fin de la seccion de productos en lista-->
+    <!--Comienzo del footer-->
     <footer>
-        <p><i class="fab fa-pagelines icon-brand"></i>NATURAL SHOP - Gracias por visitarnos<i
-                class="fas fa-hand-holding-heart icon-brand"></i></p>
+        <p><i class="fab fa-pagelines iconos-navegacion"></i>NATURAL SHOP - Gracias por visitarnos<i
+                class="fas fa-hand-holding-heart iconos-navegacion"></i></p>
     </footer>
-
+    <!--Fin del footer-->
     <script src="index.js"></script>
 </body>
 

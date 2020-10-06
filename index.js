@@ -4,6 +4,20 @@ const tarjetas = document.getElementsByClassName("tarjeta-producto");
 const filtroCategoria = document.getElementsByClassName("review-filtro");
 const filtroPuntaje = document.querySelectorAll(".revisar-filtro");
 
+botonLimpiar.onclick = () => {
+  filtroBusqueda.value = ""
+  for (let checkbox of filtroCategoria) {
+    checkbox.checked = false 
+  }
+  for(let checkbox of filtroPuntaje){
+    checkbox.checked = false 
+
+  }
+  tarjeta.classList.remove('hidden')
+}
+
+
+
 const mostrarTarjeta = (tarjeta) => {
   return tarjeta.classList.remove("hidden")
 }
@@ -172,10 +186,10 @@ const pasaTodosLosFiltros = (tarjeta) => {
   }
 }
 
-const botonAbrirCarrito = document.querySelector(".carrito")
+const botonAbrirCarrito = document.querySelector(".boton-carrito")
 const menuDesplegableCarrito = document.querySelector(".menu-carrito")
 const botonCerrarCarrito = document.querySelector(".cerrar-menu-carrito")
-const botonAbrirModal = document.querySelector(".abrir-modal")
+const botonAbrirCheckout = document.querySelector(".abrir-checkout")
 const menuCheckout = document.querySelector(".checkout")
 
 botonAbrirCarrito.onclick = () => {
@@ -188,6 +202,28 @@ botonCerrarCarrito.onclick = () => {
   menuDesplegableCarrito.classList.remove("mostrar-menu-carrito")
 
 }
+
+
+//Codigo para boton que da la vista de productos en grilla o lista
+
+const botonListaDeProductos=document.querySelector(".fa-list");
+const productosEnLista=document.querySelector(".lista-productos-oculta");
+const botonGrillaDeProductos =document.querySelector(".fa-th");
+const footer=document.querySelector("footer")
+
+botonListaDeProductos.onclick=()=>{
+  productosEnLista.classList.add("mostrar-lista-productos")
+  
+}
+botonGrillaDeProductos.onclick=()=>{
+  productosEnLista.classList.remove("mostrar-lista-productos")
+ 
+}
+
+
+
+
+
 //CODIGO PARA CHECKOUT CARRITO
 
 const subtotal = document.querySelector('#subtotal');
@@ -203,8 +239,8 @@ const envio = document.querySelector('.envio');
 const subtotalProductos = 5000;
 const gastoDeEnvio = 50;
 
-botonAbrirModal.onclick = () => {
-  menuCheckout.classList.add("menu-checkout")
+botonAbrirCheckout.onclick = () => {
+  menuCheckout.classList.add("contenedor-checkout")
   radioTarjeta.onclick()
 }
 
