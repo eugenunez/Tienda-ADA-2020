@@ -89,6 +89,49 @@ nav{
 .abrir-checkout{
     background-color: lavender;
 }
+.producto-en-carrito{
+    margin-top:10px;
+}
+
+.descripcion-tarjeta-carrito{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+.descripcion-tarjeta-carrito input{
+    width:40px;
+}
+
+.descripcion-tarjeta-carrito h3{
+    margin-left: 10px;
+}
+#subtotal-producto{
+    margin-left:10px;
+}
+
+.imagen-carrito{
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+.imagen-carrito>img{
+    width: 100%;
+    height: auto;
+    transition: all 2s;
+    border-radius:20px; 
+
+}
+
+#unidades{
+    size:1px;
+}
+
 /* ESTILADO DEL CHECKOUT*/
 
 .checkout{
@@ -326,10 +369,6 @@ h4{
     margin:5px;
 }
 
-.hidden{
-    display:none;
-}
-
 .rating{
     padding: 5px;
     margin-bottom: 10px;
@@ -362,46 +401,41 @@ ul{
     padding: 10px;
 }
 
-.lista-productos-oculta{
-    display:none;
-}
+
 .lista-productos{
     display: block;
     padding:2%;
     background-color: white;
-    position: relative;
-    transform:translateY(-2070px);
 }
-.mostrar-lista-productos{
-    display: block;
+.imagen-informacion{
+    display:block;
 }
+.imagen-informacion-lista{
+    display:flex;
+}
+.informacion-tarjeta-lista{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
+}
+.imagen-en-lista{
+    width: 400px;
+    height: 250px;
+}
 .tarjeta-producto-lista{
     display:flex;
     border: 2px solid lavender;
-    align-items:center;
     border-radius:20px;
     margin-bottom: 20px;
     padding:30px;   
-
-}
-.informacion-tarjeta{
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    height: 60%;
 }
 
-.informacion-tarjeta p{
-margin-top:0;
-}
 .boton-comprar-lista{
-    width: 100px;
-    border:none;
-    border-radius: 5px solid  rgb(199, 199, 247);
-    background-color: rgb(199, 199, 247);
-    font-size: medium;
-    padding: 10px;
+    width: 200px;
+}
+.descripcion-producto-oculta{
+    display:none;
 }
 
 footer{
@@ -417,6 +451,11 @@ footer{
 footer p{
     font-size: 20px;
 }
+
+.hidden{
+    display:none;
+}
+
 
 @media (max-width:600px){
     .barra-navegacion{
@@ -460,9 +499,7 @@ footer p{
     display: none;
 }
 
-.contenedor h3,input,label{
-    margin-left:20px;
-}
+
 
 .contenedor h2{
     margin-left:20px;

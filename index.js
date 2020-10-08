@@ -1,22 +1,23 @@
 const filtroBusqueda = document.getElementById("busqueda");
 const botonLimpiar = document.querySelector(".boton-limpiar");
-const tarjetas = document.getElementsByClassName("tarjeta-producto");
+const tarjetas = document.querySelectorAll(".obtener-tarjeta");
 const filtroCategoria = document.getElementsByClassName("review-filtro");
 const filtroPuntaje = document.querySelectorAll(".revisar-filtro");
+
 
 botonLimpiar.onclick = () => {
   filtroBusqueda.value = ""
   for (let checkbox of filtroCategoria) {
-    checkbox.checked = false 
+    checkbox.checked = false
   }
-  for(let checkbox of filtroPuntaje){
-    checkbox.checked = false 
+  for (let checkbox of filtroPuntaje) {
+    checkbox.checked = false
 
   }
-  tarjeta.classList.remove('hidden')
+  for (let tarjeta of tarjetas) {
+    tarjeta.classList.remove('hidden')
+  }
 }
-
-
 
 const mostrarTarjeta = (tarjeta) => {
   return tarjeta.classList.remove("hidden")
@@ -186,6 +187,37 @@ const pasaTodosLosFiltros = (tarjeta) => {
   }
 }
 
+//AGREGAR PRODUCTOS AL CARRITO
+
+const productoAguaFloral = document.querySelector("#lavanda")
+const productoJabon = document.querySelector("#calendula")
+const inputUnidadesAguaFloral = document.querySelector("#unidades-agua-floral")
+const inputUnidadesJabon = document.querySelector("#unidades-jabon")
+const subtotalCarrito = document.getElementById("subtotal-producto")
+
+let precioTotalAguaFloral = 400
+let precioTotalJabon = 300
+let cantidadAguaFloral = inputUnidadesAguaFloral.value
+let cantidadJabon = inputUnidadesJabon.value
+
+inputUnidadesAguaFloral.oninput = () => {
+  if (inputUnidadesAguaFloral.value >= 0) {
+    cantidadAguaFloral = inputUnidadesAguaFloral.value
+    precioTotalAguaFloral = parseFloat(productoAguaFloral.dataset.precio) * cantidadAguaFloral
+    subtotalCarrito.textContent = precioTotalAguaFloral + precioTotalJabon
+  }
+}
+
+inputUnidadesJabon.oninput = () => {
+  if (inputUnidadesJabon.value >= 0) {
+    cantidadJabon = inputUnidadesJabon.value
+    precioTotalJabon = parseFloat(productoJabon.dataset.precio) * cantidadJabon
+    subtotalCarrito.textContent = precioTotalAguaFloral + precioTotalJabon
+  }
+}
+
+//CARRITO DESPLEGABLE
+
 const botonAbrirCarrito = document.querySelector(".boton-carrito")
 const menuDesplegableCarrito = document.querySelector(".menu-carrito")
 const botonCerrarCarrito = document.querySelector(".cerrar-menu-carrito")
@@ -195,34 +227,15 @@ const menuCheckout = document.querySelector(".checkout")
 botonAbrirCarrito.onclick = () => {
   menuDesplegableCarrito.classList.add("menu-carrito-desplegable")
   menuDesplegableCarrito.classList.add("mostrar-menu-carrito")
-
+  subtotalCarrito.textContent = parseFloat(productoAguaFloral.dataset.precio) * cantidadAguaFloral
+    + parseFloat(productoJabon.dataset.precio) * cantidadJabon
 }
+
 
 botonCerrarCarrito.onclick = () => {
   menuDesplegableCarrito.classList.remove("mostrar-menu-carrito")
 
 }
-
-
-//Codigo para boton que da la vista de productos en grilla o lista
-
-const botonListaDeProductos=document.querySelector(".fa-list");
-const productosEnLista=document.querySelector(".lista-productos-oculta");
-const botonGrillaDeProductos =document.querySelector(".fa-th");
-const footer=document.querySelector("footer")
-
-botonListaDeProductos.onclick=()=>{
-  productosEnLista.classList.add("mostrar-lista-productos")
-  
-}
-botonGrillaDeProductos.onclick=()=>{
-  productosEnLista.classList.remove("mostrar-lista-productos")
- 
-}
-
-
-
-
 
 //CODIGO PARA CHECKOUT CARRITO
 
@@ -230,17 +243,18 @@ const subtotal = document.querySelector('#subtotal');
 const total = document.querySelector('#total');
 const recargo = document.querySelector('#recargo');
 const radioTarjeta = document.querySelector('#tarjeta-credito');
-const radioEfectivo=document.querySelector("#efectivo-debito")
+const radioEfectivo = document.querySelector("#efectivo-debito")
 const checkboxDescuento = document.querySelector('#descuento');
 const descuento = document.querySelector('.descuento');
 const checkboxEnvio = document.querySelector('#envio');
 const envio = document.querySelector('.envio');
 //const subtotalProductos = document.querySelectorAll('.product-price');
-const subtotalProductos = 5000;
+let subtotalProductos = 0
 const gastoDeEnvio = 50;
 
 botonAbrirCheckout.onclick = () => {
   menuCheckout.classList.add("contenedor-checkout")
+  subtotalProductos = parseFloat(subtotalCarrito.textContent)
   radioTarjeta.onclick()
 }
 
@@ -274,36 +288,36 @@ radioTarjeta.onclick = () => {
     total.textContent = subtotalProductos + obtenerRecargo(subtotalProductos)
   }
 }
- radioEfectivo.onclick=()=>{
-    if (estaChequeadoEnvio() && estaChequeadoDescuento()) {
-      subtotal.textContent = subtotalProductos
-      descuento.textContent = obtenerDescuento(subtotalProductos)
-      envio.textContent = gastoDeEnvio
-      recargo.textContent =""
-      total.textContent = subtotalProductos - obtenerDescuento(subtotalProductos) + gastoDeEnvio 
-    }
-    else if (estaChequeadoEnvio() && !estaChequeadoDescuento()) {
-      subtotal.textContent = subtotalProductos
-      descuento.textContent = ""
-      envio.textContent = gastoDeEnvio
-      recargo.textContent = ""
-      total.textContent = subtotalProductos + gastoDeEnvio 
-    }
-    else if (!estaChequeadoEnvio() && estaChequeadoDescuento()) {
-      subtotal.textContent = subtotalProductos
-      descuento.textContent = obtenerDescuento(subtotalProductos)
-      envio.textContent = ""
-      recargo.textContent = ""
-      total.textContent = subtotalProductos - obtenerDescuento(subtotalProductos)
-    }
-    else {
-      subtotal.textContent = subtotalProductos
-      descuento.textContent = ""
-      envio.textContent = ""
-      recargo.textContent =""
-      total.textContent = subtotalProductos
-    }
+radioEfectivo.onclick = () => {
+  if (estaChequeadoEnvio() && estaChequeadoDescuento()) {
+    subtotal.textContent = subtotalProductos
+    descuento.textContent = obtenerDescuento(subtotalProductos)
+    envio.textContent = gastoDeEnvio
+    recargo.textContent = ""
+    total.textContent = subtotalProductos - obtenerDescuento(subtotalProductos) + gastoDeEnvio
   }
+  else if (estaChequeadoEnvio() && !estaChequeadoDescuento()) {
+    subtotal.textContent = subtotalProductos
+    descuento.textContent = ""
+    envio.textContent = gastoDeEnvio
+    recargo.textContent = ""
+    total.textContent = subtotalProductos + gastoDeEnvio
+  }
+  else if (!estaChequeadoEnvio() && estaChequeadoDescuento()) {
+    subtotal.textContent = subtotalProductos
+    descuento.textContent = obtenerDescuento(subtotalProductos)
+    envio.textContent = ""
+    recargo.textContent = ""
+    total.textContent = subtotalProductos - obtenerDescuento(subtotalProductos)
+  }
+  else {
+    subtotal.textContent = subtotalProductos
+    descuento.textContent = ""
+    envio.textContent = ""
+    recargo.textContent = ""
+    total.textContent = subtotalProductos
+  }
+}
 
 checkboxDescuento.oninput = () => {
   if (estaChequeadoDescuento()) {
@@ -358,5 +372,65 @@ const estaChequeadoEnvio = () => {
   }
 };
 
+//Codigo para boton que da la vista de productos en grilla o lista
+
+const botonListaDeProductos = document.querySelector(".fa-list");
+const botonGrillaDeProductos = document.querySelector(".fa-th");
+const contenedor = document.querySelector("#contenedor-grilla");
+const parrafosDescripcion=document.querySelectorAll(".descripcion-producto-oculta")
+const estructuradeTarjestasEnLista=document.querySelectorAll(".imagen-informacion")
+const imagenesDeTarjeta=document.querySelectorAll(".imagen")
+const informacionDeTarjetas=document.querySelectorAll(".informacion-tarjeta")
+const botonesComprar=document.querySelectorAll(".boton-comprar")
+
+
+botonListaDeProductos.onclick = () => {
+  contenedor.classList.remove("contenedor-tarjetas-productos")
+  contenedor.classList.add("lista-productos")
+  for (let tarjeta of tarjetas) {
+    tarjeta.classList.remove("tarjeta-producto")
+    tarjeta.classList.add("tarjeta-producto-lista")
+    tarjeta.classList.add("informacion-tarjeta")
+  }
+  for(let parrafo of parrafosDescripcion){
+    parrafo.classList.remove("descripcion-producto-oculta")
+}
+  for (let estructura of estructuradeTarjestasEnLista){
+    estructura.classList.add("imagen-informacion-lista")
+  }
+  for(let imagen of imagenesDeTarjeta){
+    imagen.classList.add("imagen-en-lista")
+  }
+  for (let informacion of informacionDeTarjetas){
+    informacion.classList.add("informacion-tarjeta-lista")
+  }
+  for(let boton of botonesComprar){
+    boton.classList.add("boton-comprar-lista")
+  }
+}
+
+
+botonGrillaDeProductos.onclick = () => {
+  contenedor.classList.add("contenedor-tarjetas-productos")
+  contenedor.classList.remove("lista-productos")
+  informacion.classList.remove("informacion-tarjeta-lista")
+  for (let tarjeta of tarjetas) {
+    tarjeta.classList.add("tarjeta-producto")
+    tarjeta.classList.remove("tarjeta-producto-lista")   
+}
+  for(let parrafo of parrafosDescripcion){
+    parrafo.classList.add("descripcion-producto-oculta")
+
+}
+for (let estructura of estructuradeTarjestasEnLista){
+  estructura.classList.remove("imagen-informacion-lista")
+}
+for(let imagen of imagenesDeTarjeta){
+  imagen.classList.remove("imagen-en-lista")
+}
+for(let boton of botonesComprar){
+  boton.classList.remove("boton-comprar-lista")
+}
+}
 
 

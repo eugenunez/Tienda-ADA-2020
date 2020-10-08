@@ -26,9 +26,27 @@
         <div class="encabezado-carrito">
             <h3>Carrito</h3>
             <button class="cerrar-menu-carrito"><i class="far fa-window-close"></i></button>
-            <p>No tienes productos en el carrito, ¡agrega algunos!</p>
+            <!--<p>No tienes productos en el carrito, ¡agrega algunos!</p>-->
         </div>
 
+        <article class="tarjeta-producto-carrito" id="lavanda" data-precio="400">
+            <h4>Agua de Lavanda</h4>
+            <div class="descripcion-tarjeta-carrito">
+                <div class="imagen-carrito"><img src="./imagenesTienda/agua-lavanda.jpg" /></div>
+                <input type="number" min="0" id="unidades-agua-floral" value="1"><label>unidades</label>
+                <h5>x$400</h5>
+            </div>
+        </article>
+
+        <article class="producto-en-carrito" id="calendula" data-precio="300">
+            <h4>Jabon de Calendula</h4>
+            <div class="descripcion-tarjeta-carrito">
+                <div class="imagen-carrito"><img src="./imagenesTienda/jabon-calendula.jpg" /></div>
+                <input type="number" min="0" id="unidades-jabon" value="1"><label>unidades</label>
+                <h5>x$300</h5>
+                <div>
+        </article>
+        <h3>Subtotal:$<span id="subtotal-producto"></span></h3>
         <div class="comenzar-compra">
             <button class="abrir-checkout">COMPRAR</button>
             <button>VACIAR</button>
@@ -40,8 +58,8 @@
 
     <div class="checkout">
         <div class="contenedor">
-        <h2>Checkout</h2>
-       <div class="blabla">
+            <h2>Checkout</h2>
+            <div class="blabla">
                 <div class="datos-personales-pago">
                     <form>
                         <h2>Datos personales</h2>
@@ -67,15 +85,16 @@
                         <h3>Descuento:$<span class="descuento"></span></h3>
                         <h3>Envio:$<span class="envio"></span></h3>
                         <h3>Recargo:$<span id="recargo"></span></h3>
+
                         <h2>Total:$<span id="total"></span></h2>
                     </div>
                     <div class="botones-compra">
                         <button id="boton-seguir-compra">SEGUIR COMPRANDO</button>
                         <button id="boton-finalizar">FINALIZAR</button>
                     </div>
+                </div>
             </div>
         </div>
-    </div>
     </div>
     <!--Fin del checkout-->
     <!--Comienzo del header-->
@@ -190,206 +209,26 @@
         <section class="seccion-principal">
             <div class="vista-productos">
                 <div class="uno">
-                <p>Mostrando 12 producto(s) de 12</p>
+                    <p>Mostrando 12 producto(s) de 12</p>
+                </div>
+                <div class="dos">
+                    <p>Ver como</p>
+                    <button><i class="fas fa-th"></i></button>
+                    <button><i class="fas fa-list"></i></button>
+                </div>
             </div>
-            <div class="dos">
-                <p>Ver como</p>
-                <button><i class="fas fa-th"></i></button>
-                <button><i class="fas fa-list"></i></button>
-            </div>
-            </div>
-            <div class="contenedor-tarjetas-productos">
-                <article class="tarjeta-producto" data-nombre="agua de lavanda" data-categoria="aguas-florales"
-                    data-precio="400" data-rating="5">
-                    <div class="imagen"><img src="./imagenesTienda/agua-lavanda.jpg" /></div>
-                    <h4>Agua de Lavanda</h4>
-                    <p>400$</p>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <button class="boton-comprar">COMPRAR</button>
-                </article>
-
-                <article class="tarjeta-producto" data-nombre="crema humectante citrica" data-categoria="cremas"
-                    data-precio="500" data-rating="2">
-                    <div class="imagen"><img src="./imagenesTienda/crema-humectante-citrica.jpg" /></div>
-                    <h4>Crema humectante cítrica</h4>
-                    <p>500$</p>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                    <button class="boton-comprar">COMPRAR</button>
-                </article>
-
-                <article class="tarjeta-producto" data-nombre="crema exfoliante de calendula" data-categoria="cremas"
-                    data-precio="500" data-rating="5">
-                    <div class="imagen"><img src="./imagenesTienda/crema-exfoliante-calendula.jpg" /></div>
-                    <h4>Crema exfoliante de Caléndula</h4>
-                    <p>500$</p>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <button class="boton-comprar">COMPRAR</button>
-                </article>
-
-                <article class="tarjeta-producto" data-nombre="pasta dental en polvo" data-categoria="pasta-dental"
-                    data-precio="250" data-rating="1">
-                    <div class="imagen"><img src="./imagenesTienda/pasta-dental-solida.jpg" /></div>
-                    <h4>Pasta dental en polvo</h4>
-                    <p>250$</p>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                    <button class="boton-comprar">COMPRAR</button>
-                </article>
-
-                <article class="tarjeta-producto" data-nombre="pasta dental en crema" data-categoria="pasta-dental"
-                    data-precio="200" data-rating="3">
-                    <div class="imagen"><img src="./imagenesTienda/pasta-dental-crema.jpg" /></div>
-                    <h4>Pasta dental en crema</h4>
-                    <p>200$</p>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                    <button class="boton-comprar">COMPRAR</button>
-                </article>
-
-                <article class="tarjeta-producto" data-nombre="jabon de coco" data-categoria="jabones" data-precio="200"
-                    data-rating="2">
-                    <div class="imagen"><img src="./imagenesTienda/jabon-coco.jpg" /></div>
-                    <h4>Jabón de Coco</h4>
-                    <p>200$</p>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                    <button class="boton-comprar-lista">COMPRAR</button>
-                </article>
-
-                <article class="tarjeta-producto" data-nombre="jabon de lavanda" data-categoria="jabones"
-                    data-precio="250" data-rating="4">
-                    <div class="imagen"><img src="./imagenesTienda/jabon-lavanda.jpg" /></div>
-                    <h4>Jabón de Lavanda</h4>
-                    <p>250$</p>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                    <button class="boton-comprar">COMPRAR</button>
-                </article>
-
-                <article class="tarjeta-producto" data-nombre="jabon de calendula" data-categoria="jabones"
-                    data-precio="300" data-rating="3">
-                    <div class="imagen"><img src="./imagenesTienda/jabon-calendula.jpg" /></div>
-                    <h4>Jabón de Caléndula</h4>
-                    <p>300$</p>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                    <button class="boton-comprar">COMPRAR</button>
-                </article>
-
-                <article class="tarjeta-producto" data-nombre="aceite de rosa mosqueta"
-                    data-categoria="aceites-esenciales" data-precio="450" data-rating="4">
-                    <div class="imagen"><img src="./imagenesTienda/aceite-rosa-mosqueta.jpg" /></div>
-                    <h4>Aceite de Rosa Mosqueta</h4>
-                    <p>450$</p>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                    <button class="boton-comprar">COMPRAR</button>
-                </article>
-
-                <article class="tarjeta-producto" data-nombre="aceite de jojoba" data-categoria="aceites-esenciales"
-                    data-precio="500" data-rating="5">
-                    <div class="imagen"><img src="./imagenesTienda/aceite-jojoba.jpg" /></div>
-                    <h4>Aceite de Jojoba</h4>
-                    <p>500$</p>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <button class="boton-comprar">COMPRAR</button>
-                </article>
-                <article class="tarjeta-producto" data-nombre="agua de rosas" data-categoria="aguas-florales"
-                    data-precio="400" data-rating="3">
-                    <div class="imagen"><img src="./imagenesTienda/agua-rosas.jpg" /></div>
-                    <h4>Agua de Rosas</h4>
-                    <p>400$</p>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                    <button class="boton-comprar">COMPRAR</button>
-                </article>
-                <article class="tarjeta-producto" data-nombre="crema humectante de aloe vera" data-categoria="cremas"
-                    data-precio="500" data-rating="5">
-                    <div class="imagen"><img src="./imagenesTienda/crema-aloe-vera.jpg" /></div>
-                    <h4>Crema humectante de Aloe Vera</h4>
-                    <p>500$</p>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <button class="boton-comprar">COMPRAR</button>
-                </article>
-            </div>
-            </div>
-            <div class="lista-productos-oculta">
-                <div class="lista-productos">
-                    <article class="tarjeta-producto-lista" data-nombre="agua de lavanda"
-                        data-categoria="aguas-florales" data-precio="400" data-rating="5">
+            <div class="contenedor-tarjetas-productos" id="contenedor-grilla">
+                <article class="tarjeta-producto obtener-tarjeta" data-nombre="agua de lavanda"
+                    data-categoria="aguas-florales" data-precio="400" data-rating="5">
+                    <div class="imagen-informacion">
                         <div class="imagen"><img src="./imagenesTienda/agua-lavanda.jpg" /></div>
                         <div class="informacion-tarjeta">
                             <h4>Agua de Lavanda</h4>
                             <p>400$</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, asperiores,
-                                distinctio perspiciatis quis, quidem voluptates velit esse inventore dolorem
-                                officiis culpa quas optio possimus voluptatum iure quod. Facere,
-                                cupiditate fugiat!</p>
+                            <p class="descripcion-producto-oculta">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                elit. Adipisci soluta voluptatem enim cumque
+                                nulla asperiores consequuntur, fuga itaque autem nesciunt ex, maiores esse, reiciendis
+                                repudiandae sunt ut consequatur tempora. Veritatis.</p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -397,20 +236,22 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                             </div>
-                            <button class="boton-comprar-lista">COMPRAR</button>
+                            <button class="boton-comprar">COMPRAR</button>
                         </div>
-                    </article>
+                    </div>
+                </article>
 
-                    <article class="tarjeta-producto-lista" data-nombre="crema humectante citrica"
-                        data-categoria="cremas" data-precio="500" data-rating="2">
+                <article class="tarjeta-producto obtener-tarjeta" data-nombre="crema humectante citrica"
+                    data-categoria="cremas" data-precio="500" data-rating="2">
+                    <div class="imagen-informacion">
                         <div class="imagen"><img src="./imagenesTienda/crema-humectante-citrica.jpg" /></div>
                         <div class="informacion-tarjeta">
                             <h4>Crema humectante cítrica</h4>
                             <p>500$</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, asperiores,
-                                distinctio perspiciatis quis, quidem voluptates velit esse inventore dolorem
-                                officiis culpa quas optio possimus voluptatum iure quod. Facere,
-                                cupiditate fugiat!</p>
+                            <p class="descripcion-producto-oculta">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                elit. Adipisci soluta voluptatem enim cumque
+                                nulla asperiores consequuntur, fuga itaque autem nesciunt ex, maiores esse, reiciendis
+                                repudiandae sunt ut consequatur tempora. Veritatis.</p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -418,20 +259,22 @@
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <button class="boton-comprar-lista">COMPRAR</button>
+                            <button class="boton-comprar">COMPRAR</button>
                         </div>
-                    </article>
+                    </div>
+                </article>
 
-                    <article class="tarjeta-producto-lista" data-nombre="crema exfoliante de calendula"
-                        data-categoria="cremas" data-precio="500" data-rating="5">
+                <article class="tarjeta-producto obtener-tarjeta" data-nombre="crema exfoliante de calendula"
+                    data-categoria="cremas" data-precio="500" data-rating="5">
+                    <div class="imagen-informacion">
                         <div class="imagen"><img src="./imagenesTienda/crema-exfoliante-calendula.jpg" /></div>
                         <div class="informacion-tarjeta">
                             <h4>Crema exfoliante de Caléndula</h4>
                             <p>500$</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, asperiores,
-                                distinctio perspiciatis quis, quidem voluptates velit esse inventore dolorem
-                                officiis culpa quas optio possimus voluptatum iure quod. Facere,
-                                cupiditate fugiat!</p>
+                            <p class="descripcion-producto-oculta">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                elit. Adipisci soluta voluptatem enim cumque
+                                nulla asperiores consequuntur, fuga itaque autem nesciunt ex, maiores esse, reiciendis
+                                repudiandae sunt ut consequatur tempora. Veritatis.</p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -439,20 +282,22 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                             </div>
-                            <button class="boton-comprar-lista">COMPRAR</button>
+                            <button class="boton-comprar">COMPRAR</button>
                         </div>
-                    </article>
+                    </div>
+                </article>
 
-                    <article class="tarjeta-producto-lista" data-nombre="pasta dental en polvo"
-                        data-categoria="pasta-dental" data-precio="250" data-rating="1">
+                <article class="tarjeta-producto obtener-tarjeta" data-nombre="pasta dental en polvo"
+                    data-categoria="pasta-dental" data-precio="250" data-rating="1">
+                    <div class="imagen-informacion">
                         <div class="imagen"><img src="./imagenesTienda/pasta-dental-solida.jpg" /></div>
                         <div class="informacion-tarjeta">
                             <h4>Pasta dental en polvo</h4>
                             <p>250$</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, asperiores,
-                                distinctio perspiciatis quis, quidem voluptates velit esse inventore dolorem
-                                officiis culpa quas optio possimus voluptatum iure quod. Facere,
-                                cupiditate fugiat!</p>
+                            <p class="descripcion-producto-oculta">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                elit. Adipisci soluta voluptatem enim cumque
+                                nulla asperiores consequuntur, fuga itaque autem nesciunt ex, maiores esse, reiciendis
+                                repudiandae sunt ut consequatur tempora. Veritatis.</p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="far fa-star"></i>
@@ -460,20 +305,22 @@
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <button class="boton-comprar-lista">COMPRAR</button>
+                            <button class="boton-comprar">COMPRAR</button>
                         </div>
-                    </article>
+                    </div>
+                </article>
 
-                    <article class="tarjeta-producto-lista" data-nombre="pasta dental en crema"
-                        data-categoria="pasta-dental" data-precio="200" data-rating="3">
+                <article class="tarjeta-producto obtener-tarjeta" data-nombre="pasta dental en crema"
+                    data-categoria="pasta-dental" data-precio="200" data-rating="3">
+                    <div class="imagen-informacion">
                         <div class="imagen"><img src="./imagenesTienda/pasta-dental-crema.jpg" /></div>
                         <div class="informacion-tarjeta">
                             <h4>Pasta dental en crema</h4>
                             <p>200$</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, asperiores,
-                                distinctio perspiciatis quis, quidem voluptates velit esse inventore dolorem
-                                officiis culpa quas optio possimus voluptatum iure quod. Facere,
-                                cupiditate fugiat!</p>
+                            <p class="descripcion-producto-oculta">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                elit. Adipisci soluta voluptatem enim cumque
+                                nulla asperiores consequuntur, fuga itaque autem nesciunt ex, maiores esse, reiciendis
+                                repudiandae sunt ut consequatur tempora. Veritatis.</p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -481,20 +328,22 @@
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <button class="boton-comprar-lista">COMPRAR</button>
+                            <button class="boton-comprar">COMPRAR</button>
                         </div>
-                    </article>
+                    </div>
+                </article>
 
-                    <article class="tarjeta-producto-lista" data-nombre="jabon de coco" data-categoria="jabones"
-                        data-precio="200" data-rating="2">
+                <article class="tarjeta-producto obtener-tarjeta" data-nombre="jabon de coco" data-categoria="jabones"
+                    data-precio="200" data-rating="2">
+                    <div class="imagen-informacion">
                         <div class="imagen"><img src="./imagenesTienda/jabon-coco.jpg" /></div>
                         <div class="informacion-tarjeta">
                             <h4>Jabón de Coco</h4>
                             <p>200$</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, asperiores,
-                                distinctio perspiciatis quis, quidem voluptates velit esse inventore dolorem
-                                officiis culpa quas optio possimus voluptatum iure quod. Facere,
-                                cupiditate fugiat!</p>
+                            <p class="descripcion-producto-oculta">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                elit. Adipisci soluta voluptatem enim cumque
+                                nulla asperiores consequuntur, fuga itaque autem nesciunt ex, maiores esse, reiciendis
+                                repudiandae sunt ut consequatur tempora. Veritatis.</p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -502,20 +351,22 @@
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <button class="boton-comprar-lista">COMPRAR</button>
+                            <button class="boton-comprar">COMPRAR</button>
                         </div>
-                    </article>
+                    </div>
+                </article>
 
-                    <article class="tarjeta-producto-lista" data-nombre="jabon de lavanda" data-categoria="jabones"
-                        data-precio="250" data-rating="4">
+                <article class="tarjeta-producto obtener-tarjeta" data-nombre="jabon de lavanda"
+                    data-categoria="jabones" data-precio="250" data-rating="4">
+                    <div class="imagen-informacion">
                         <div class="imagen"><img src="./imagenesTienda/jabon-lavanda.jpg" /></div>
                         <div class="informacion-tarjeta">
                             <h4>Jabón de Lavanda</h4>
                             <p>250$</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, asperiores,
-                                distinctio perspiciatis quis, quidem voluptates velit esse inventore dolorem
-                                officiis culpa quas optio possimus voluptatum iure quod. Facere,
-                                cupiditate fugiat!</p>
+                            <p class="descripcion-producto-oculta">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                elit. Adipisci soluta voluptatem enim cumque
+                                nulla asperiores consequuntur, fuga itaque autem nesciunt ex, maiores esse, reiciendis
+                                repudiandae sunt ut consequatur tempora. Veritatis.</p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -523,20 +374,22 @@
                                 <i class="fas fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <button class="boton-comprar-lista">COMPRAR</button>
+                            <button class="boton-comprar">COMPRAR</button>
                         </div>
-                    </article>
+                    </div>
+                </article>
 
-                    <article class="tarjeta-producto-lista" data-nombre="jabon de calendula" data-categoria="jabones"
-                        data-precio="300" data-rating="3">
+                <article class="tarjeta-producto obtener-tarjeta" data-nombre="jabon de calendula"
+                    data-categoria="jabones" data-precio="300" data-rating="3">
+                    <div class="imagen-informacion">
                         <div class="imagen"><img src="./imagenesTienda/jabon-calendula.jpg" /></div>
                         <div class="informacion-tarjeta">
                             <h4>Jabón de Caléndula</h4>
                             <p>300$</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, asperiores,
-                                distinctio perspiciatis quis, quidem voluptates velit esse inventore dolorem
-                                officiis culpa quas optio possimus voluptatum iure quod. Facere,
-                                cupiditate fugiat!</p>
+                            <p class="descripcion-producto-oculta">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                elit. Adipisci soluta voluptatem enim cumque
+                                nulla asperiores consequuntur, fuga itaque autem nesciunt ex, maiores esse, reiciendis
+                                repudiandae sunt ut consequatur tempora. Veritatis.</p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -544,20 +397,22 @@
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <button class="boton-comprar-lista">COMPRAR</button>
+                            <button class="boton-comprar">COMPRAR</button>
                         </div>
-                    </article>
+                    </div>
+                </article>
 
-                    <article class="tarjeta-producto-lista" data-nombre="aceite de rosa mosqueta"
-                        data-categoria="aceites-esenciales" data-precio="450" data-rating="4">
+                <article class="tarjeta-producto obtener-tarjeta" data-nombre="aceite de rosa mosqueta"
+                    data-categoria="aceites-esenciales" data-precio="450" data-rating="4">
+                    <div class="imagen-informacion">
                         <div class="imagen"><img src="./imagenesTienda/aceite-rosa-mosqueta.jpg" /></div>
                         <div class="informacion-tarjeta">
                             <h4>Aceite de Rosa Mosqueta</h4>
                             <p>450$</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, asperiores,
-                                distinctio perspiciatis quis, quidem voluptates velit esse inventore dolorem
-                                officiis culpa quas optio possimus voluptatum iure quod. Facere,
-                                cupiditate fugiat!</p>
+                            <p class="descripcion-producto-oculta">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                elit. Adipisci soluta voluptatem enim cumque
+                                nulla asperiores consequuntur, fuga itaque autem nesciunt ex, maiores esse, reiciendis
+                                repudiandae sunt ut consequatur tempora. Veritatis.</p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -565,20 +420,22 @@
                                 <i class="fas fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <button class="boton-comprar-lista">COMPRAR</button>
+                            <button class="boton-comprar">COMPRAR</button>
                         </div>
-                    </article>
+                    </div>
+                </article>
 
-                    <article class="tarjeta-producto-lista" data-nombre="aceite de jojoba"
-                        data-categoria="aceites-esenciales" data-precio="500" data-rating="5">
+                <article class="tarjeta-producto obtener-tarjeta" data-nombre="aceite de jojoba"
+                    data-categoria="aceites-esenciales" data-precio="500" data-rating="5">
+                    <div class="imagen-informacion">
                         <div class="imagen"><img src="./imagenesTienda/aceite-jojoba.jpg" /></div>
                         <div class="informacion-tarjeta">
                             <h4>Aceite de Jojoba</h4>
                             <p>500$</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, asperiores,
-                                distinctio perspiciatis quis, quidem voluptates velit esse inventore dolorem
-                                officiis culpa quas optio possimus voluptatum iure quod. Facere,
-                                cupiditate fugiat!</p>
+                            <p class="descripcion-producto-oculta">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                elit. Adipisci soluta voluptatem enim cumque
+                                nulla asperiores consequuntur, fuga itaque autem nesciunt ex, maiores esse, reiciendis
+                                repudiandae sunt ut consequatur tempora. Veritatis.</p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -586,19 +443,21 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                             </div>
-                            <button class="boton-comprar-lista">COMPRAR</button>
+                            <button class="boton-comprar">COMPRAR</button>
                         </div>
-                    </article>
-                    <article class="tarjeta-producto-lista" data-nombre="agua de rosas" data-categoria="aguas-florales"
-                        data-precio="400" data-rating="3">
+                    </div>
+                </article>
+                <article class="tarjeta-producto obtener-tarjeta" data-nombre="agua de rosas"
+                    data-categoria="aguas-florales" data-precio="400" data-rating="3">
+                    <div class="imagen-informacion">
                         <div class="imagen"><img src="./imagenesTienda/agua-rosas.jpg" /></div>
                         <div class="informacion-tarjeta">
                             <h4>Agua de Rosas</h4>
                             <p>400$</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, asperiores,
-                                distinctio perspiciatis quis, quidem voluptates velit esse inventore dolorem
-                                officiis culpa quas optio possimus voluptatum iure quod. Facere,
-                                cupiditate fugiat!</p>
+                            <p class="descripcion-producto-oculta">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                elit. Adipisci soluta voluptatem enim cumque
+                                nulla asperiores consequuntur, fuga itaque autem nesciunt ex, maiores esse, reiciendis
+                                repudiandae sunt ut consequatur tempora. Veritatis.</p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -606,19 +465,21 @@
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <button class="boton-comprar-lista">COMPRAR</button>
+                            <button class="boton-comprar">COMPRAR</button>
                         </div>
-                    </article>
-                    <article class="tarjeta-producto-lista" data-nombre="crema humectante de aloe vera"
-                        data-categoria="cremas" data-precio="500" data-rating="5">
+                    </div>
+                </article>
+                <article class="tarjeta-producto obtener-tarjeta" data-nombre="crema humectante de aloe vera"
+                    data-categoria="cremas" data-precio="500" data-rating="5">
+                    <div class="imagen-informacion">
                         <div class="imagen"><img src="./imagenesTienda/crema-aloe-vera.jpg" /></div>
                         <div class="informacion-tarjeta">
                             <h4>Crema humectante de Aloe Vera</h4>
                             <p>500$</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, asperiores,
-                                distinctio perspiciatis quis, quidem voluptates velit esse inventore dolorem
-                                officiis culpa quas optio possimus voluptatum iure quod. Facere,
-                                cupiditate fugiat!</p>
+                            <p class="descripcion-producto-oculta">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                elit. Adipisci soluta voluptatem enim cumque
+                                nulla asperiores consequuntur, fuga itaque autem nesciunt ex, maiores esse, reiciendis
+                                repudiandae sunt ut consequatur tempora. Veritatis.</p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -626,18 +487,15 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                             </div>
-                            <button class="boton-comprar-lista">COMPRAR</button>
+                            <button class="boton-comprar">COMPRAR</button>
                         </div>
-                    </article>
-                </div>
+                    </div>
+                </article>
+            </div>
             </div>
         </section>
     </section>
     <!--Fin de seccion de productos en grilla-->
-
-    <!--Comienzo de seccion de productos en lista-->
-
-    <!--Fin de la seccion de productos en lista-->
     <!--Comienzo del footer-->
     <footer>
         <p><i class="fab fa-pagelines iconos-navegacion"></i>NATURAL SHOP - Gracias por visitarnos<i
