@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    
     <title>Tienda de Cosmética Natural</title>
 </head>
 
@@ -29,7 +30,7 @@
             <!--<p>No tienes productos en el carrito, ¡agrega algunos!</p>-->
         </div>
 
-        <article class="tarjeta-producto-carrito" id="lavanda" data-precio="400">
+        <article class="producto-en-carrito" id="lavanda" data-precio="400">
             <h4>Agua de Lavanda</h4>
             <div class="descripcion-tarjeta-carrito">
                 <div class="imagen-carrito"><img src="./imagenesTienda/agua-lavanda.jpg" /></div>
@@ -46,7 +47,7 @@
                 <h5>x$300</h5>
                 <div>
         </article>
-        <h3>Subtotal:$<span id="subtotal-producto"></span></h3>
+        <h3 class="subtotal-carrito">Subtotal:$<span id="subtotal-producto"></span></h3>
         <div class="comenzar-compra">
             <button class="abrir-checkout">COMPRAR</button>
             <button>VACIAR</button>
@@ -215,6 +216,9 @@
                     <p>Ver como</p>
                     <button><i class="fas fa-th"></i></button>
                     <button><i class="fas fa-list"></i></button>
+                </div>
+            <div class="boton-filtro">
+                    <button><i class="fas fa-filter">Filtros</i></button>
                 </div>
             </div>
             <div class="contenedor-tarjetas-productos" id="contenedor-grilla">

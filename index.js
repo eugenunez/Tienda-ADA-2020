@@ -229,11 +229,13 @@ botonAbrirCarrito.onclick = () => {
   menuDesplegableCarrito.classList.add("mostrar-menu-carrito")
   subtotalCarrito.textContent = parseFloat(productoAguaFloral.dataset.precio) * cantidadAguaFloral
     + parseFloat(productoJabon.dataset.precio) * cantidadJabon
+   
 }
 
 
 botonCerrarCarrito.onclick = () => {
   menuDesplegableCarrito.classList.remove("mostrar-menu-carrito")
+  
 
 }
 
@@ -248,7 +250,6 @@ const checkboxDescuento = document.querySelector('#descuento');
 const descuento = document.querySelector('.descuento');
 const checkboxEnvio = document.querySelector('#envio');
 const envio = document.querySelector('.envio');
-//const subtotalProductos = document.querySelectorAll('.product-price');
 let subtotalProductos = 0
 const gastoDeEnvio = 50;
 
@@ -409,11 +410,10 @@ botonListaDeProductos.onclick = () => {
   }
 }
 
-
 botonGrillaDeProductos.onclick = () => {
   contenedor.classList.add("contenedor-tarjetas-productos")
   contenedor.classList.remove("lista-productos")
-  informacion.classList.remove("informacion-tarjeta-lista")
+  
   for (let tarjeta of tarjetas) {
     tarjeta.classList.add("tarjeta-producto")
     tarjeta.classList.remove("tarjeta-producto-lista")   
@@ -427,6 +427,9 @@ for (let estructura of estructuradeTarjestasEnLista){
 }
 for(let imagen of imagenesDeTarjeta){
   imagen.classList.remove("imagen-en-lista")
+}
+for (let informacion of informacionDeTarjetas){
+informacion.classList.remove("informacion-tarjeta-lista")
 }
 for(let boton of botonesComprar){
   boton.classList.remove("boton-comprar-lista")
