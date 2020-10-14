@@ -5,7 +5,7 @@ html {
 body{
     
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin:0;
+    margin:0; 
     
 }
 
@@ -38,6 +38,7 @@ nav{
 
 .menu-carrito{
     display: none;
+   
 }
 .menu-carrito-desplegable{
     display: block;
@@ -51,10 +52,12 @@ nav{
     transform: translateX(431px);
     z-index:1;
     border:2px solid grey;
+    
      
 }
 .mostrar-menu-carrito{
     transform: translateX(0px); 
+    
 }
 
 .encabezado-carrito{
@@ -68,7 +71,24 @@ nav{
     
 }
 .fa-window-close{
-    font-size:30px;     
+    font-size:30px; 
+    background-color: white;  
+    border: none;  
+ }
+ .ocultar-parrafo{
+     display:none;
+ }
+ .borrar-producto{
+     display:flex;
+     justify-content: space-between;
+ }
+ .boton-eliminar-producto{
+     color: red;
+     background-color: white;
+     border: none;
+     font-size: 20px;
+     margin-right: 20px;
+
  }
  .producto-en-carrito{
     margin-top:10px;
@@ -92,21 +112,42 @@ nav{
 .abrir-checkout{
     background-color: lavender;
 }
-
-
+.ocultar-modal{
+    display:none;
+}
+#modal-vaciar{
+    background-color: white;
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    top:30%;
+    left: 25%;
+    border: 2px solid grey;
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+}
+.botones-vaciar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+   
+    
+}
 .descripcion-tarjeta-carrito{
     display:flex;
     align-items: center;
     justify-content: space-around;
-    text-align: center;
+    text-align: center;  
 }
 .descripcion-tarjeta-carrito input{
     width:40px;
 }
 
-.descripcion-tarjeta-carrito h3{
+.descripcion-tarjeta-carrito h5{
     margin-left: 10px;
 }
+
 #subtotal-producto{
     margin-left:10px;
 }
@@ -144,7 +185,6 @@ nav{
     display: block;
     align-items: space-evenly;
     justify-content: space-evenly;
- 
 }
 .contenedor h2{
     padding:20px;
@@ -257,7 +297,7 @@ h1{
 
 /* ESTILADO DE LA SECCION DE FILTROS*/
 
-.contenedor-filtros-principal{
+.contenedor-filtros-y-seccion-principal{
     display:flex;
 }
 
@@ -292,6 +332,13 @@ label{
     display:flex;
     
 }
+.boton-filtro{
+    display:none;
+}
+.cerrar-filtro-responsive{
+    display:none;
+}
+
 
 /*ESTILADO VISTA PRODUCTOS*/
 
@@ -324,9 +371,7 @@ label{
     border:none;
     font-size: 20px;
 }
-.boton-filtro{
-    display:none;
-}
+
 .contenedor-tarjetas-productos{
     display: flex;
     flex-wrap: wrap;
@@ -463,7 +508,12 @@ footer p{
 .hidden{
     display:none;
 }
-@media (min-width:1024px)and (max-width:1100px){
+
+.no-scroll{
+    overflow-y:hidden;
+    
+}
+@media (min-width:1024px)and(max-width:1100px){
     .menu-carrito-desplegable{
         width:40%;
         align-items: center;
@@ -474,7 +524,7 @@ footer p{
     }
     .contenedor-checkout{
         width: 70%;
-        left:150px;
+        left:160px;
         top:300px;
         height: auto;
     }
@@ -491,6 +541,10 @@ footer p{
         left: 310px; 
         height: auto; 
     }
+    .datos-personales-pago{
+        width:100%;
+        margin-right:20px;
+    }
     .datos-personales-pago h2{  
         margin-right: 20px;
     }
@@ -504,10 +558,7 @@ footer p{
         width: 100%;
         margin:20px;
     }
-   .datos-personales-pago{
-       width:100%;
-       margin-right:20px;
-   }
+   
    #boton-finalizar{
        width: 300px;
    }
@@ -515,9 +566,6 @@ footer p{
     width: 300px;
    }
    
-    .filtros{
-        display:none;
-    }
     .dos{
         display:none;
     }
@@ -531,7 +579,11 @@ footer p{
         font-size: 30px;
        
     }
-
+    
+   
+    .filtros{
+        display: none;
+    }
     .seccion-principal{
         width:100%;
     }
@@ -595,9 +647,29 @@ footer p{
         background-color: white;
         font-size: 20px;
     }
-                
-    .filtros{
+    .contenedor-filtros{
         display:none;
+    }
+    .cerrar-filtro-responsive{
+        display:flex;
+        justify-content: flex-end;
+        
+    }
+    .filtros-responsive{
+        margin-top:10px;
+        display:block;
+        background-color:white;
+        height: 100vh;
+        position:absolute;
+        transition:2s;
+        width: 80%;
+        right: 0px;   
+        transform: translateX(360px);
+        z-index: 1;
+        border:2px solid grey;
+    }
+    .mostrar-filtros-responsive{
+        transform:translateX(0px);
     }
         
    /*ESTILADO DE SECCION PRINCIPAL*/
@@ -655,7 +727,7 @@ footer p{
 .contenedor-checkout{
     display:flex;
     width: 100%;
-    height:auto;
+    height:150vh;
     z-index: 2; 
     border:2px solid grey;
     position:absolute;
@@ -709,4 +781,4 @@ footer p{
         }
 
     }
-}
+   

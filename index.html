@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    
+
     <title>Tienda de Cosmética Natural</title>
 </head>
 
@@ -27,11 +27,14 @@
         <div class="encabezado-carrito">
             <h3>Carrito</h3>
             <button class="cerrar-menu-carrito"><i class="far fa-window-close"></i></button>
-            <!--<p>No tienes productos en el carrito, ¡agrega algunos!</p>-->
+            <p id="no-hay-productos"class="ocultar-parrafo">No tienes productos en el carrito, ¡agrega algunos!</p>
         </div>
-
+        
         <article class="producto-en-carrito" id="lavanda" data-precio="400">
-            <h4>Agua de Lavanda</h4>
+            <div class="borrar-producto">
+                <h4>Agua de Lavanda</h4>
+                <button type="button" class="boton-eliminar-producto"><i class="far fa-trash-alt"></i></button>
+            </div>
             <div class="descripcion-tarjeta-carrito">
                 <div class="imagen-carrito"><img src="./imagenesTienda/agua-lavanda.jpg" /></div>
                 <input type="number" min="0" id="unidades-agua-floral" value="1"><label>unidades</label>
@@ -40,19 +43,29 @@
         </article>
 
         <article class="producto-en-carrito" id="calendula" data-precio="300">
-            <h4>Jabon de Calendula</h4>
+            <div class="borrar-producto">
+                <h4>Jabon de Calendula</h4>
+                <button type="button" class="boton-eliminar-producto"><i class="far fa-trash-alt"></i></button>
+            </div>
             <div class="descripcion-tarjeta-carrito">
                 <div class="imagen-carrito"><img src="./imagenesTienda/jabon-calendula.jpg" /></div>
                 <input type="number" min="0" id="unidades-jabon" value="1"><label>unidades</label>
                 <h5>x$300</h5>
                 <div>
         </article>
+    
         <h3 class="subtotal-carrito">Subtotal:$<span id="subtotal-producto"></span></h3>
         <div class="comenzar-compra">
             <button class="abrir-checkout">COMPRAR</button>
-            <button>VACIAR</button>
+            <button class="vaciar-carrito">VACIAR</button>
         </div>
-
+    </div>
+    <div class="ocultar-modal" id="modal-vaciar">
+        <p>Estás por vaciar el carrito,¿Quiéres continuar?</p>
+        <div class="botones-vaciar">
+            <button id="boton-cancelar-eliminacion">CANCELAR</button>
+            <button id="boton-vaciar-modal">VACIAR</button>
+        </div>
     </div>
     <!--Fin del menu carrito-->
     <!--Comienzo del checkout-->
@@ -61,15 +74,17 @@
         <div class="contenedor">
             <h2>Checkout</h2>
             <div class="blabla">
+
                 <div class="datos-personales-pago">
                     <form>
                         <h2>Datos personales</h2>
                         <label>Nombre y apellido*</label>
-                        <input type="text" name="nombre-apellido" placeholder="p.ej.:Ada Lovelace "
-                            class="input-text" />
+                        <input type="text" name="nombre-apellido" placeholder="p.ej.:Ada Lovelace " class="input-text"
+                            required />
 
                         <label>Email*</label>
-                        <input type="text" name="email" placeholder="p.ej.:adalovelace@gmail.com" class="input-text" />
+                        <input type="text" name="email" placeholder="p.ej.:adalovelace@gmail.com" class="input-text"
+                            required />
 
                         <h2>Opciones de pago</h2>
                         <label><input type="radio" name="forma-pago" id="efectivo-debito" />Efectivo/Débito</label>
@@ -93,6 +108,7 @@
                         <button id="boton-seguir-compra">SEGUIR COMPRANDO</button>
                         <button id="boton-finalizar">FINALIZAR</button>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -104,9 +120,12 @@
     </header>
     <!--Fin del header-->
     <!--Comienzo de seccion de filtros-->
-    <section class=contenedor-filtros-principal>
+    <section class=contenedor-filtros-y-seccion-principal>
         <section class="contenedor-filtros">
             <aside class="filtros">
+                <div class="cerrar-filtro-responsive">
+                    <button id="boton-cerrar-filtro"><i class="far fa-window-close"></i></button>
+                </div>
                 <form>
                     <div class="encabezado-filtro">
                         <h2>FILTROS</h2>
@@ -217,7 +236,7 @@
                     <button><i class="fas fa-th"></i></button>
                     <button><i class="fas fa-list"></i></button>
                 </div>
-            <div class="boton-filtro">
+                <div class="boton-filtro">
                     <button><i class="fas fa-filter">Filtros</i></button>
                 </div>
             </div>

@@ -186,6 +186,23 @@ const pasaTodosLosFiltros = (tarjeta) => {
     return true
   }
 }
+//FILTROS RESPONSIVE
+
+const ventanaFiltrosResponsive = document.querySelector(".contenedor-filtros")
+const botonFiltro = document.querySelector(".boton-filtro")
+const botonCerrarFiltroResponsive = document.querySelector("#boton-cerrar-filtro")
+
+botonFiltro.onclick = () => {
+  ventanaFiltrosResponsive.classList.add("filtros-responsive")
+  ventanaFiltrosResponsive.classList.add("mostrar-filtros-responsive")
+  ventanaFiltrosResponsive.classList.add("cerrar-filtro-responsive")
+}
+
+botonCerrarFiltroResponsive.onclick = () => {
+  ventanaFiltrosResponsive.classList.remove("mostrar-filtros-responsive")
+
+
+}
 
 //AGREGAR PRODUCTOS AL CARRITO
 
@@ -223,21 +240,57 @@ const menuDesplegableCarrito = document.querySelector(".menu-carrito")
 const botonCerrarCarrito = document.querySelector(".cerrar-menu-carrito")
 const botonAbrirCheckout = document.querySelector(".abrir-checkout")
 const menuCheckout = document.querySelector(".checkout")
+const body = document.querySelector("body")
+const botonVaciarCarrito = document.querySelector(".vaciar-carrito")
+const ModalVaciarCarrito = document.getElementById("modal-vaciar")
+const botonCancelarEliminarProductos = document.getElementById("boton-cancelar-eliminacion")
+const botonVaciarDefinitivamenteElCarrito = document.getElementById("boton-vaciar-modal")
+const parrafoNoHayProductosEnCarrito = document.getElementById("no-hay-productos")
+const h3SubtotalCarrito = document.querySelector(".subtotal-carrito")
+const botonesComenzarCompra = document.querySelector(".comenzar-compra")
 
 botonAbrirCarrito.onclick = () => {
   menuDesplegableCarrito.classList.add("menu-carrito-desplegable")
   menuDesplegableCarrito.classList.add("mostrar-menu-carrito")
+  body.classList.add("no-scroll")
   subtotalCarrito.textContent = parseFloat(productoAguaFloral.dataset.precio) * cantidadAguaFloral
     + parseFloat(productoJabon.dataset.precio) * cantidadJabon
-   
-}
+  parrafoNoHayProductosEnCarrito.classList.add("ocultar-parrafo")
+  productoJabon.classList.remove("hidden")
+  productoAguaFloral.classList.remove("hidden")
+  h3SubtotalCarrito.classList.remove("hidden")
+  botonesComenzarCompra.classList.remove("hidden")
 
+}
 
 botonCerrarCarrito.onclick = () => {
   menuDesplegableCarrito.classList.remove("mostrar-menu-carrito")
+  body.classList.remove("no-scroll")
+}
+
+botonVaciarCarrito.onclick = () => {
+  ModalVaciarCarrito.classList.remove("ocultar-modal")
+}
+
+botonCancelarEliminarProductos.onclick=()=>{
+  ModalVaciarCarrito.classList.add("ocultar-modal")
   
+}
+botonVaciarDefinitivamenteElCarrito.onclick = () => {
+  productoJabon.classList.add("hidden")
+  productoAguaFloral.classList.add("hidden")
+  h3SubtotalCarrito.classList.add("hidden")
+  botonesComenzarCompra.classList.add("hidden")
+  ModalVaciarCarrito.classList.add("ocultar-modal")
+  parrafoNoHayProductosEnCarrito.classList.remove("ocultar-parrafo")
+  inputUnidadesAguaFloral.value = 0
+  inputUnidadesJabon.value = 0
+  inputUnidadesAguaFloral.oninput()
+  inputUnidadesJabon.oninput()
 
 }
+
+
 
 //CODIGO PARA CHECKOUT CARRITO
 
@@ -252,11 +305,23 @@ const checkboxEnvio = document.querySelector('#envio');
 const envio = document.querySelector('.envio');
 let subtotalProductos = 0
 const gastoDeEnvio = 50;
+const botonSeguirComprando = document.getElementById("boton-seguir-compra")
+botonFinalizarCompra = document.getElementById("boton-finalizar")
+
 
 botonAbrirCheckout.onclick = () => {
   menuCheckout.classList.add("contenedor-checkout")
+  body.classList.add("no-scroll")
   subtotalProductos = parseFloat(subtotalCarrito.textContent)
   radioTarjeta.onclick()
+}
+botonSeguirComprando.onclick = () => {
+  menuCheckout.classList.remove("contenedor-checkout")
+  body.classList.remove("no-scroll")
+
+}
+botonFinalizarCompra = () => {
+
 }
 
 radioTarjeta.onclick = () => {
@@ -378,11 +443,11 @@ const estaChequeadoEnvio = () => {
 const botonListaDeProductos = document.querySelector(".fa-list");
 const botonGrillaDeProductos = document.querySelector(".fa-th");
 const contenedor = document.querySelector("#contenedor-grilla");
-const parrafosDescripcion=document.querySelectorAll(".descripcion-producto-oculta")
-const estructuradeTarjestasEnLista=document.querySelectorAll(".imagen-informacion")
-const imagenesDeTarjeta=document.querySelectorAll(".imagen")
-const informacionDeTarjetas=document.querySelectorAll(".informacion-tarjeta")
-const botonesComprar=document.querySelectorAll(".boton-comprar")
+const parrafosDescripcion = document.querySelectorAll(".descripcion-producto-oculta")
+const estructuradeTarjestasEnLista = document.querySelectorAll(".imagen-informacion")
+const imagenesDeTarjeta = document.querySelectorAll(".imagen")
+const informacionDeTarjetas = document.querySelectorAll(".informacion-tarjeta")
+const botonesComprar = document.querySelectorAll(".boton-comprar")
 
 
 botonListaDeProductos.onclick = () => {
@@ -393,19 +458,19 @@ botonListaDeProductos.onclick = () => {
     tarjeta.classList.add("tarjeta-producto-lista")
     tarjeta.classList.add("informacion-tarjeta")
   }
-  for(let parrafo of parrafosDescripcion){
+  for (let parrafo of parrafosDescripcion) {
     parrafo.classList.remove("descripcion-producto-oculta")
-}
-  for (let estructura of estructuradeTarjestasEnLista){
+  }
+  for (let estructura of estructuradeTarjestasEnLista) {
     estructura.classList.add("imagen-informacion-lista")
   }
-  for(let imagen of imagenesDeTarjeta){
+  for (let imagen of imagenesDeTarjeta) {
     imagen.classList.add("imagen-en-lista")
   }
-  for (let informacion of informacionDeTarjetas){
+  for (let informacion of informacionDeTarjetas) {
     informacion.classList.add("informacion-tarjeta-lista")
   }
-  for(let boton of botonesComprar){
+  for (let boton of botonesComprar) {
     boton.classList.add("boton-comprar-lista")
   }
 }
@@ -413,27 +478,27 @@ botonListaDeProductos.onclick = () => {
 botonGrillaDeProductos.onclick = () => {
   contenedor.classList.add("contenedor-tarjetas-productos")
   contenedor.classList.remove("lista-productos")
-  
+
   for (let tarjeta of tarjetas) {
     tarjeta.classList.add("tarjeta-producto")
-    tarjeta.classList.remove("tarjeta-producto-lista")   
-}
-  for(let parrafo of parrafosDescripcion){
+    tarjeta.classList.remove("tarjeta-producto-lista")
+  }
+  for (let parrafo of parrafosDescripcion) {
     parrafo.classList.add("descripcion-producto-oculta")
 
-}
-for (let estructura of estructuradeTarjestasEnLista){
-  estructura.classList.remove("imagen-informacion-lista")
-}
-for(let imagen of imagenesDeTarjeta){
-  imagen.classList.remove("imagen-en-lista")
-}
-for (let informacion of informacionDeTarjetas){
-informacion.classList.remove("informacion-tarjeta-lista")
-}
-for(let boton of botonesComprar){
-  boton.classList.remove("boton-comprar-lista")
-}
+  }
+  for (let estructura of estructuradeTarjestasEnLista) {
+    estructura.classList.remove("imagen-informacion-lista")
+  }
+  for (let imagen of imagenesDeTarjeta) {
+    imagen.classList.remove("imagen-en-lista")
+  }
+  for (let informacion of informacionDeTarjetas) {
+    informacion.classList.remove("informacion-tarjeta-lista")
+  }
+  for (let boton of botonesComprar) {
+    boton.classList.remove("boton-comprar-lista")
+  }
 }
 
 
