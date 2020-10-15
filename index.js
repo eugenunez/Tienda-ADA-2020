@@ -272,9 +272,9 @@ botonVaciarCarrito.onclick = () => {
   ModalVaciarCarrito.classList.remove("ocultar-modal")
 }
 
-botonCancelarEliminarProductos.onclick=()=>{
+botonCancelarEliminarProductos.onclick = () => {
   ModalVaciarCarrito.classList.add("ocultar-modal")
-  
+
 }
 botonVaciarDefinitivamenteElCarrito.onclick = () => {
   productoJabon.classList.add("hidden")
