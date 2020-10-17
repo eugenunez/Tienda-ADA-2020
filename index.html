@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +13,9 @@
     <!--Comienzo de la barra de navegacion-->
     <nav>
         <ul class="barra-navegacion">
-            <li><i class="fab fa-pagelines iconos-navegacion"></i>NATURAL SHOP</li>
-            <li><button class="boton-carrito"><i class="fas fa-shopping-cart iconos-navegacion"></i>Carrito</button>
+            <li><i role="img" class="fab fa-pagelines iconos-navegacion"></i>NATURAL SHOP</li>
+            <li><button class="boton-carrito" aria-label="abrir-carrito"><i
+                        class="fas fa-shopping-cart iconos-navegacion"></i>Carrito</button>
             </li>
         </ul>
     </nav>
@@ -25,19 +25,23 @@
     <div class="menu-carrito">
 
         <div class="encabezado-carrito">
-            <h3>Carrito</h3>
-            <button class="cerrar-menu-carrito"><i class="far fa-window-close"></i></button>
+            <h2>Carrito</h2>
+            <button class="cerrar-menu-carrito" aria-label="cerrar-el-carrito"><i
+                    class="far fa-window-close"></i></button>
             <p id="no-hay-productos" class="ocultar-parrafo">No tienes productos en el carrito, ¡agrega algunos!</p>
         </div>
 
         <article class="producto-en-carrito" id="lavanda" data-precio="400">
             <div class="borrar-producto">
                 <h4>Agua de Lavanda</h4>
-                <button type="button" class="boton-eliminar-producto"><i class="far fa-trash-alt"></i></button>
+                <button type="button" class="boton-eliminar-producto" aria-label="eliminar-producto"><i
+                        class="far fa-trash-alt"></i></button>
             </div>
             <div class="descripcion-tarjeta-carrito">
-                <div class="imagen-carrito"><img src="./imagenesTienda/agua-lavanda.jpg" /></div>
-                <input type="number" min="0" id="unidades-agua-floral" value="1"><label>unidades</label>
+                <div class="imagen-carrito"><img alt="Frasco de vidrio rustico conteniendo agua de lavanda"
+                        src="./imagenesTienda/agua-lavanda.jpg" /></div>
+                <label for="unidades-agua-floral">
+                    <input type="number" min="0" id="unidades-agua-floral" value="1">unidades</label>
                 <h5>x$400</h5>
             </div>
         </article>
@@ -45,11 +49,15 @@
         <article class="producto-en-carrito" id="calendula" data-precio="300">
             <div class="borrar-producto">
                 <h4>Jabon de Calendula</h4>
-                <button type="button" class="boton-eliminar-producto"><i class="far fa-trash-alt"></i></button>
+                <button type="button" class="boton-eliminar-producto" aria-label="eliminar-producto"><i
+                        class="far fa-trash-alt"></i></button>
             </div>
             <div class="descripcion-tarjeta-carrito">
-                <div class="imagen-carrito"><img src="./imagenesTienda/jabon-calendula.jpg" /></div>
-                <input type="number" min="0" id="unidades-jabon" value="1"><label>unidades</label>
+                <div class="imagen-carrito">
+                    <img alt="Barra de jabón de caléndula sobre la que se apoya la flor del mismo nombre"
+                        src="./imagenesTienda/jabon-calendula.jpg" /></div>
+                <label for="unidades-jabon">
+                    <input type="number" min="0" id="unidades-jabon" value="1">unidades</label>
                 <h5>x$300</h5>
                 <div>
         </article>
@@ -61,7 +69,7 @@
         </div>
     </div>
     <div class="ocultar-modal" id="modal-vaciar">
-        <p>Estás por vaciar el carrito,¿Quiéres continuar?</p>
+        <p>Estás por vaciar el carrito, ¿Quiéres continuar?</p>
         <div class="botones-vaciar">
             <button id="boton-cancelar-eliminacion">CANCELAR</button>
             <button id="boton-vaciar-modal">VACIAR</button>
@@ -78,20 +86,22 @@
                 <div class="datos-personales-pago">
                     <form>
                         <h2>Datos personales</h2>
-                        <label>Nombre y apellido*</label>
+                        <label for="nombre-y-apellido" class="datos-comprador">Nombre y apellido*
                         <input type="text" name="nombre-apellido" placeholder="p.ej.:Ada Lovelace " class="input-text"
-                            required />
+                            required id="nombre-y-apellido"/>
+                        </label>
 
-                        <label>Email*</label>
+                        <label for="correo-electronico" class="datos-comprador">Email*
                         <input type="text" name="email" placeholder="p.ej.:adalovelace@gmail.com" class="input-text"
-                            required />
+                            required id="correo-electronico"/>
+                        </label>
 
                         <h2>Opciones de pago</h2>
-                        <label><input type="radio" name="forma-pago" id="efectivo-debito" />Efectivo/Débito</label>
-                        <label><input type="radio" name="forma-pago" id="tarjeta-credito" checked />Tarjeta de
+                        <label for="efectivo-debito"><input type="radio" name="forma-pago" id="efectivo-debito" />Efectivo/Débito</label>
+                        <label for="tarjeta-credito"><input type="radio" name="forma-pago" id="tarjeta-credito" checked />Tarjeta de
                             crédito</label>
-                        <label><input type="checkbox" name="con-envio" id="envio" />Necesito envío</label>
-                        <label><input type="checkbox" name="tarjeta-descuento" id="descuento" />Tengo tarjeta de
+                        <label for="envio"><input type="checkbox" name="con-envío" id="envio" />Necesito envío</label>
+                        <label for="descuento"><input type="checkbox" name="tarjeta-descuento" id="descuento" />Tengo tarjeta de
                             descuento</label>
                 </div>
                 <div class="resumen">
@@ -120,29 +130,30 @@
     </header>
     <!--Fin del header-->
     <!--Comienzo de seccion de filtros-->
-    <section class=contenedor-filtros-y-seccion-principal>
+    <section class="contenedor-filtros-y-seccion-principal">
         <section class="contenedor-filtros">
             <aside class="filtros">
                 <div class="cerrar-filtro-responsive">
-                    <button id="boton-cerrar-filtro"><i class="far fa-window-close"></i></button>
+                    <button id="boton-cerrar-filtro" aria-label="ocultar-filtros"><i
+                            class="far fa-window-close"></i></button>
                 </div>
                 <form>
                     <div class="encabezado-filtro">
                         <h2>FILTROS</h2>
-                        <button type="button" class="boton-limpiar"><i class="far fa-trash-alt icon-brand"></i>
-                            Limpiar</button>
+                        <button type="button" class="boton-limpiar" aria-label="borrar-filtros-seleccionados">
+                            <i class="far fa-trash-alt"></i>Limpiar</button>
                     </div>
-                    <label> BÚSQUEDA</label>
-                    <div class="lupa">
-                        
+
+                    <label class="input-busqueda" for="búsqueda">
+                        <h3>BÚSQUEDA</h3>
                         <input type="text" id="busqueda" />
-
                         <i class="fas fa-search"></i>
-                    </div>
+                    </label>
 
-                    <h3 class="filtro-categoria">CATEGORÍA</h3>
-                    <label>
-                        <input type="checkbox" name="productos" value="aguas-florales" class="review-filtro" />
+                    <h3>CATEGORÍA</h3>
+                    <label for="clasificación-de-producto">
+                        <input type="checkbox" name="productos" value="aguas-florales" class="review-filtro"
+                            id="clasificación-de-producto" />
                         AGUAS FLORALES
                     </label>
 
@@ -166,9 +177,10 @@
                         PASTA DENTAL
                     </label>
 
-                    <h3 class="filtro-puntaje"> PUNTAJE </h3>
-                    <label>
-                        <input type="checkbox" name="puntaje" value="5" class="revisar-filtro" id="checkbox-5" />
+                    <h3> PUNTAJE </h3>
+                    <label for="puntuacion">
+                        <input type="checkbox" name="puntaje" value="5" class="revisar-filtro" id="checkbox-5"
+                            id="puntuacion" />
                         <div class="review">
                             <i class="fas fa-star" aria-hidden="true"></i>
                             <i class="fas fa-star" aria-hidden="true"></i>
@@ -245,7 +257,8 @@
                 <article class="tarjeta-producto obtener-tarjeta" data-nombre="agua de lavanda"
                     data-categoria="aguas-florales" data-precio="400" data-rating="5">
                     <div class="imagen-informacion">
-                        <div class="imagen"><img src="./imagenesTienda/agua-lavanda.jpg" /></div>
+                        <div class="imagen"><img alt="Frasco de vidrio rústico que contiene agua de lavanda"
+                                src="./imagenesTienda/agua-lavanda.jpg" /></div>
                         <div class="informacion-tarjeta">
                             <h4>Agua de Lavanda</h4>
                             <p>400$</p>
@@ -265,10 +278,13 @@
                     </div>
                 </article>
 
-                <article class="tarjeta-producto obtener-tarjeta" data-nombre="crema humectante citrica"
-                    data-categoria="cremas" data-precio="500" data-rating="2">
+                <article class="tarjeta-producto obtener-tarjeta"
+                    data-nombre="crema hidratante con extracto de té verde" data-categoria="cremas" data-precio="500"
+                    data-rating="2">
                     <div class="imagen-informacion">
-                        <div class="imagen"><img src="./imagenesTienda/crema-humectante-citrica.jpg" /></div>
+                        <div class="imagen"><img
+                                alt="Envase pequeño de vidrio que contiene crema y hojas verdes junto al recipiente"
+                                src="./imagenesTienda/crema-hidratante.jpg" /></div>
                         <div class="informacion-tarjeta">
                             <h4>Crema humectante cítrica</h4>
                             <p>500$</p>
@@ -291,7 +307,8 @@
                 <article class="tarjeta-producto obtener-tarjeta" data-nombre="crema exfoliante de calendula"
                     data-categoria="cremas" data-precio="500" data-rating="5">
                     <div class="imagen-informacion">
-                        <div class="imagen"><img src="./imagenesTienda/crema-exfoliante-calendula.jpg" /></div>
+                        <div class="imagen"><img alt="Envase de vidrio conteniendo la crema con trocitos de calendula"
+                                src="./imagenesTienda/crema-exfoliante-calendula.jpg" /></div>
                         <div class="informacion-tarjeta">
                             <h4>Crema exfoliante de Caléndula</h4>
                             <p>500$</p>
@@ -314,7 +331,9 @@
                 <article class="tarjeta-producto obtener-tarjeta" data-nombre="pasta dental en polvo"
                     data-categoria="pasta-dental" data-precio="250" data-rating="1">
                     <div class="imagen-informacion">
-                        <div class="imagen"><img src="./imagenesTienda/pasta-dental-solida.jpg" /></div>
+                        <div class="imagen"><img
+                                alt="Frasco de vidrio con el polvo de pasta dental y dos cepillos de dientes de madera"
+                                src="./imagenesTienda/pasta-dental-solida.jpg" /></div>
                         <div class="informacion-tarjeta">
                             <h4>Pasta dental en polvo</h4>
                             <p>250$</p>
@@ -337,7 +356,8 @@
                 <article class="tarjeta-producto obtener-tarjeta" data-nombre="pasta dental en crema"
                     data-categoria="pasta-dental" data-precio="200" data-rating="3">
                     <div class="imagen-informacion">
-                        <div class="imagen"><img src="./imagenesTienda/pasta-dental-crema.jpg" /></div>
+                        <div class="imagen"><img alt="Pomo de pasta dental y un cepillo de dientes de madera"
+                                src="./imagenesTienda/pasta-dental-crema.jpg" /></div>
                         <div class="informacion-tarjeta">
                             <h4>Pasta dental en crema</h4>
                             <p>200$</p>
@@ -360,7 +380,8 @@
                 <article class="tarjeta-producto obtener-tarjeta" data-nombre="jabon de coco" data-categoria="jabones"
                     data-precio="200" data-rating="2">
                     <div class="imagen-informacion">
-                        <div class="imagen"><img src="./imagenesTienda/jabon-coco.jpg" /></div>
+                        <div class="imagen"><img alt="Barra de jabón de coco adornado con un moño de hilo de algodón"
+                                src="./imagenesTienda/jabon-coco.jpg" /></div>
                         <div class="informacion-tarjeta">
                             <h4>Jabón de Coco</h4>
                             <p>200$</p>
@@ -383,7 +404,8 @@
                 <article class="tarjeta-producto obtener-tarjeta" data-nombre="jabon de lavanda"
                     data-categoria="jabones" data-precio="250" data-rating="4">
                     <div class="imagen-informacion">
-                        <div class="imagen"><img src="./imagenesTienda/jabon-lavanda.jpg" /></div>
+                        <div class="imagen"><img alt="Dos barras de jabón de lavanda rodeadas de flores de lavanda"
+                                src="./imagenesTienda/jabon-lavanda.jpg" /></div>
                         <div class="informacion-tarjeta">
                             <h4>Jabón de Lavanda</h4>
                             <p>250$</p>
@@ -406,7 +428,9 @@
                 <article class="tarjeta-producto obtener-tarjeta" data-nombre="jabon de calendula"
                     data-categoria="jabones" data-precio="300" data-rating="3">
                     <div class="imagen-informacion">
-                        <div class="imagen"><img src="./imagenesTienda/jabon-calendula.jpg" /></div>
+                        <div class="imagen"><img
+                                alt="Barra de jabón de caléndula sobre la que se apoya la flor del mismo nombre"
+                                src="./imagenesTienda/jabon-calendula.jpg" /></div>
                         <div class="informacion-tarjeta">
                             <h4>Jabón de Caléndula</h4>
                             <p>300$</p>
@@ -429,7 +453,8 @@
                 <article class="tarjeta-producto obtener-tarjeta" data-nombre="aceite de rosa mosqueta"
                     data-categoria="aceites-esenciales" data-precio="450" data-rating="4">
                     <div class="imagen-informacion">
-                        <div class="imagen"><img src="./imagenesTienda/aceite-rosa-mosqueta.jpg" /></div>
+                        <div class="imagen"><img alt="Frasco gotero con aceite de rosa mosqueta acompañado de rosas"
+                                src="./imagenesTienda/aceite-rosa-mosqueta.jpg" /></div>
                         <div class="informacion-tarjeta">
                             <h4>Aceite de Rosa Mosqueta</h4>
                             <p>450$</p>
@@ -452,7 +477,8 @@
                 <article class="tarjeta-producto obtener-tarjeta" data-nombre="aceite de jojoba"
                     data-categoria="aceites-esenciales" data-precio="500" data-rating="5">
                     <div class="imagen-informacion">
-                        <div class="imagen"><img src="./imagenesTienda/aceite-jojoba.jpg" /></div>
+                        <div class="imagen"><img alt="Botella pequeña conteniendo aceite de jojoba"
+                                src="./imagenesTienda/aceite-jojoba.jpg" /></div>
                         <div class="informacion-tarjeta">
                             <h4>Aceite de Jojoba</h4>
                             <p>500$</p>
@@ -474,7 +500,8 @@
                 <article class="tarjeta-producto obtener-tarjeta" data-nombre="agua de rosas"
                     data-categoria="aguas-florales" data-precio="400" data-rating="3">
                     <div class="imagen-informacion">
-                        <div class="imagen"><img src="./imagenesTienda/agua-rosas.jpg" /></div>
+                        <div class="imagen"><img alt="Frasco de vidrio con agua de rosas"
+                                src="./imagenesTienda/agua-rosas.jpg" /></div>
                         <div class="informacion-tarjeta">
                             <h4>Agua de Rosas</h4>
                             <p>400$</p>
@@ -496,7 +523,8 @@
                 <article class="tarjeta-producto obtener-tarjeta" data-nombre="crema humectante de aloe vera"
                     data-categoria="cremas" data-precio="500" data-rating="5">
                     <div class="imagen-informacion">
-                        <div class="imagen"><img src="./imagenesTienda/crema-aloe-vera.jpg" /></div>
+                        <div class="imagen"><img alt="Recipiente de plástico que contiene crema"
+                                src="./imagenesTienda/crema-aloe-vera.jpg" /></div>
                         <div class="informacion-tarjeta">
                             <h4>Crema humectante de Aloe Vera</h4>
                             <p>500$</p>
@@ -522,8 +550,9 @@
     <!--Fin de seccion de productos en grilla-->
     <!--Comienzo del footer-->
     <footer>
-        <p><i class="fab fa-pagelines iconos-navegacion"></i>NATURAL SHOP - Gracias por visitarnos<i
-                class="fas fa-hand-holding-heart iconos-navegacion"></i></p>
+        <p><i role="img" class="fab fa-pagelines iconos-navegacion"></i>
+            NATURAL SHOP - Gracias por visitarnos
+            <i role="img" class="fas fa-hand-holding-heart iconos-navegacion"></i></p>
     </footer>
     <!--Fin del footer-->
     <script src="index.js"></script>
