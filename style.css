@@ -790,10 +790,9 @@ footer>p {
         text-align: center;
     }
     .menu-carrito {
-        height: 100%;
+        height: 120vh;
         width: 100%;
         position: absolute;
-        
         transform: translateX(600px);
     }
     .mostrar-menu-carrito {
