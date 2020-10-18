@@ -570,7 +570,7 @@ footer>p {
     overflow-y: hidden;
 }
 
-@media (min-width:1024px)and (max-width:1200px) {
+@media (min-width:1024px)and (max-widht:1500px){
     .menu-carrito {
         width: 40%;
         align-items: center;
