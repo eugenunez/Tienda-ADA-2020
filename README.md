@@ -16,7 +16,7 @@ The store was created using the following tools
   - DevIcons
 
 ## USAGE
-The store its deployed in the following  url:https://eugenunez.github.io/Tienda-ADA-2020/)
+The store its deployed in the following  url:https://eugenunez.github.io/Tienda-ADA-2020/
 
 ## Contributing
 
