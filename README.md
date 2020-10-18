@@ -1,6 +1,6 @@
 # Tienda-ADA-2020 Maria Eugenia Nuñez
 
-_Nature Cosmetic Store, Your green beauty shop with the best brands 100% natural, organic and vegan cosmetics, make-up and perfume _
+_ Nature Cosmetic Store, Your green beauty shop with the best brands 100% natural, organic and vegan cosmetics, make-up and perfume _
 
 ## Technology used
 
