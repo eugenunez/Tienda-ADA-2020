@@ -239,7 +239,7 @@ const botonAbrirCarrito = document.querySelector(".boton-carrito")
 const menuDesplegableCarrito = document.querySelector("#menu-carrito")
 const botonCerrarCarrito = document.querySelector(".cerrar-menu-carrito")
 const botonAbrirCheckout = document.querySelector(".abrir-checkout")
-const menuCheckout = document.querySelector(".checkout")
+const menuCheckout = document.getElementById("checkout")
 const body = document.querySelector("body")
 const botonVaciarCarrito = document.querySelector(".vaciar-carrito")
 const ModalVaciarCarrito = document.getElementById("modal-vaciar")
@@ -312,17 +312,14 @@ botonFinalizarCompra = document.getElementById("boton-finalizar")
 
 
 botonAbrirCheckout.onclick = () => {
-  menuCheckout.classList.add("contenedor-checkout")
+  menuCheckout.classList.remove("hidden")
   body.classList.add("no-scroll")
   subtotalProductos = parseFloat(subtotalCarrito.textContent)
   radioTarjeta.onclick()
 }
 botonSeguirComprando.onclick = () => {
-  menuCheckout.classList.remove("contenedor-checkout")
+  menuCheckout.classList.add("hidden")
   body.classList.remove("no-scroll")
-
-}
-botonFinalizarCompra = () => {
 
 }
 
