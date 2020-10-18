@@ -305,7 +305,7 @@ const descuento = document.querySelector('.descuento');
 const checkboxEnvio = document.querySelector('#envio');
 const envio = document.querySelector('.envio');
 let subtotalProductos = 0
-const gastoDeEnvio = 50;
+const gastoDeEnvio = 300;
 const botonSeguirComprando = document.getElementById("boton-seguir-compra")
 botonFinalizarCompra = document.getElementById("boton-finalizar")
 
@@ -411,7 +411,7 @@ const obtenerRecargo = (subtotalProductos) => {
 };
 
 const obtenerDescuento = (subtotalProductos) => {
-  const descuento = subtotalProductos * 0.1;
+  const descuento = subtotalProductos * 0.05;
   return descuento
 };
 

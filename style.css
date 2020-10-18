@@ -67,6 +67,9 @@ nav {
     flex-wrap: wrap;
     font-size: 20px;
 }
+#no-hay-productos{
+    text-align: center;
+}
 
 .fa-window-close {
     font-size: 30px;
@@ -607,12 +610,19 @@ footer>p {
         margin-left: px;
         margin-right: 0px;
     }
+    .descripcion-producto{
+        width: 500px;
+    }
+    .imagen-en-lista {
+         width: 200px;
+         height: 250px;
+    }
+
 }
 
+
 @media (min-width:768px) and (max-width:1023px) {
-    .menu-carrito {
-        width: 50%;
-    }
+
     #modal-vaciar {
         width: 50%;
         height: 30%;
@@ -688,10 +698,10 @@ footer>p {
         width: 100%;
     }
     .contenedor-tarjetas-productos {
-        width: 768px;
+        width: 800px;
     }
     .tarjeta-producto {
-        width: 350px;
+        width: 300px;
         margin-right: 0px;
         padding: 0px;
     }
@@ -782,8 +792,7 @@ footer>p {
         height: 100%;
         width: 100%;
         position: absolute;
-        right: 0;
-        top: 0;
+        
         transform: translateX(600px);
     }
     .mostrar-menu-carrito {
@@ -861,11 +870,9 @@ footer>p {
     }
     .menu-carrito {
         height: 100%;
-        width: 100%;
+     
         position: absolute;
-        right: 0;
-        top: 0;
-        transform: translateX(500px);
+        transform: translateX(400px);
     }
     .mostrar-menu-carrito {
         transform: translateX(0px);
