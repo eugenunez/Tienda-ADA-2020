@@ -236,7 +236,7 @@ inputUnidadesJabon.oninput = () => {
 //CARRITO DESPLEGABLE
 
 const botonAbrirCarrito = document.querySelector(".boton-carrito")
-const menuDesplegableCarrito = document.querySelector(".menu-carrito")
+const menuDesplegableCarrito = document.querySelector("#menu-carrito")
 const botonCerrarCarrito = document.querySelector(".cerrar-menu-carrito")
 const botonAbrirCheckout = document.querySelector(".abrir-checkout")
 const menuCheckout = document.querySelector(".checkout")
@@ -248,11 +248,12 @@ const botonVaciarDefinitivamenteElCarrito = document.getElementById("boton-vacia
 const parrafoNoHayProductosEnCarrito = document.getElementById("no-hay-productos")
 const h3SubtotalCarrito = document.querySelector(".subtotal-carrito")
 const botonesComenzarCompra = document.querySelector(".comenzar-compra")
+const overlay=document.getElementById("overlay")
 
 botonAbrirCarrito.onclick = () => {
-  menuDesplegableCarrito.classList.add("menu-carrito-desplegable")
   menuDesplegableCarrito.classList.add("mostrar-menu-carrito")
   body.classList.add("no-scroll")
+  overlay.classList.remove("hidden")
   subtotalCarrito.textContent = parseFloat(productoAguaFloral.dataset.precio) * cantidadAguaFloral
     + parseFloat(productoJabon.dataset.precio) * cantidadJabon
   parrafoNoHayProductosEnCarrito.classList.add("ocultar-parrafo")
@@ -266,6 +267,7 @@ botonAbrirCarrito.onclick = () => {
 botonCerrarCarrito.onclick = () => {
   menuDesplegableCarrito.classList.remove("mostrar-menu-carrito")
   body.classList.remove("no-scroll")
+  overlay.classList.add("hidden")
 }
 
 botonVaciarCarrito.onclick = () => {
@@ -443,7 +445,7 @@ const estaChequeadoEnvio = () => {
 const botonListaDeProductos = document.querySelector(".fa-list");
 const botonGrillaDeProductos = document.querySelector(".fa-th");
 const contenedor = document.querySelector("#contenedor-grilla");
-const parrafosDescripcion = document.querySelectorAll(".descripcion-producto-oculta")
+const parrafosDescripcion = document.querySelectorAll(".descripcion-producto")
 const estructuradeTarjestasEnLista = document.querySelectorAll(".imagen-informacion")
 const imagenesDeTarjeta = document.querySelectorAll(".imagen")
 const informacionDeTarjetas = document.querySelectorAll(".informacion-tarjeta")
@@ -459,7 +461,7 @@ botonListaDeProductos.onclick = () => {
     tarjeta.classList.add("informacion-tarjeta")
   }
   for (let parrafo of parrafosDescripcion) {
-    parrafo.classList.remove("descripcion-producto-oculta")
+    parrafo.classList.remove("hidden")
   }
   for (let estructura of estructuradeTarjestasEnLista) {
     estructura.classList.add("imagen-informacion-lista")
@@ -484,7 +486,7 @@ botonGrillaDeProductos.onclick = () => {
     tarjeta.classList.remove("tarjeta-producto-lista")
   }
   for (let parrafo of parrafosDescripcion) {
-    parrafo.classList.add("descripcion-producto-oculta")
+    parrafo.classList.add("hidden")
 
   }
   for (let estructura of estructuradeTarjestasEnLista) {

@@ -39,11 +39,8 @@ nav {
 
 /* ESTILADO DEL MENU DE COMPRAS AL ABRIR EL CARRITO*/
 
-.menu-carrito {
-    display: none;
-}
 
-.menu-carrito-desplegable {
+.menu-carrito{
     display: block;
     transition: 2s;
     position: absolute;
@@ -314,7 +311,9 @@ nav {
 .overlay {
     position: absolute;
     top: 0;
-    background-color: rgba(7, 7, 7, 0.7);
+    background-color: rgba(7, 7, 7, 0.5);
+    width: 100vw;
+    height: 100vh;
 }
 
 .input-busqueda {
@@ -536,7 +535,7 @@ ul {
 }
 
 .imagen-en-lista {
-    width: 400px;
+    width: 600px;
     height: 250px;
 }
 
@@ -551,8 +550,11 @@ ul {
     width: 200px;
 }
 
-.descripcion-producto-oculta {
-    display: none;
+.descripcion-producto{
+    width: auto;
+    height:50px;
+    overflow:scroll;
+    border:1px solid rosybrown;
 }
 
 footer {

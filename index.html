@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,9 +22,8 @@
     </nav>
     <!--Fin de la barra de navegacion-->
     <!--Comienzo del menu carrito-->
-
-    <div class="menu-carrito">
-
+<div class="overlay hidden" id="overlay"></div>
+    <div class="menu-carrito"id="menu-carrito">
         <div class="encabezado-carrito">
             <h2>Carrito</h2>
             <button class="cerrar-menu-carrito" aria-label="cerrar-el-carrito"><i
@@ -87,21 +87,24 @@
                     <form>
                         <h2>Datos personales</h2>
                         <label for="nombre-y-apellido" class="datos-comprador">Nombre y apellido*
-                        <input type="text" name="nombre-apellido" placeholder="p.ej.:Ada Lovelace " class="input-text"
-                            required id="nombre-y-apellido"/>
+                            <input type="text" name="nombre-apellido" placeholder="p.ej.:Ada Lovelace "
+                                class="input-text" required id="nombre-y-apellido" />
                         </label>
 
                         <label for="correo-electronico" class="datos-comprador">Email*
-                        <input type="text" name="email" placeholder="p.ej.:adalovelace@gmail.com" class="input-text"
-                            required id="correo-electronico"/>
+                            <input type="text" name="email" placeholder="p.ej.:adalovelace@gmail.com" class="input-text"
+                                required id="correo-electronico" />
                         </label>
 
                         <h2>Opciones de pago</h2>
-                        <label for="efectivo-debito"><input type="radio" name="forma-pago" id="efectivo-debito" />Efectivo/Débito</label>
-                        <label for="tarjeta-credito"><input type="radio" name="forma-pago" id="tarjeta-credito" checked />Tarjeta de
+                        <label for="efectivo-debito"><input type="radio" name="forma-pago"
+                                id="efectivo-debito" />Efectivo/Débito</label>
+                        <label for="tarjeta-credito"><input type="radio" name="forma-pago" id="tarjeta-credito"
+                                checked />Tarjeta de
                             crédito</label>
                         <label for="envio"><input type="checkbox" name="con-envío" id="envio" />Necesito envío</label>
-                        <label for="descuento"><input type="checkbox" name="tarjeta-descuento" id="descuento" />Tengo tarjeta de
+                        <label for="descuento"><input type="checkbox" name="tarjeta-descuento" id="descuento" />Tengo
+                            tarjeta de
                             descuento</label>
                 </div>
                 <div class="resumen">
@@ -262,10 +265,11 @@
                         <div class="informacion-tarjeta">
                             <h4>Agua de Lavanda</h4>
                             <p>400$</p>
-                            <p class="descripcion-producto-oculta">Lorem, ipsum dolor sit amet consectetur adipisicing
-                                elit. Adipisci soluta voluptatem enim cumque
-                                nulla asperiores consequuntur, fuga itaque autem nesciunt ex, maiores esse, reiciendis
-                                repudiandae sunt ut consequatur tempora. Veritatis.</p>
+                            <p class="descripcion-producto hidden">Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Velit hic magni ipsa aspernatur corporis vitae, aperiam explicabo perferendis
+                                saepe culpa tempore suscipit blanditiis veniam neque rerum aut earum eligendi, nobis
+                                repellendus illum eveniet, iste omnis inventore cumque. Quod perferendis accusantium
+                                nemo officiis dolorem quisquam. Eaque aliquid repellat sed. Dolor, veniam.</p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -288,10 +292,11 @@
                         <div class="informacion-tarjeta">
                             <h4>Crema humectante cítrica</h4>
                             <p>500$</p>
-                            <p class="descripcion-producto-oculta">Lorem, ipsum dolor sit amet consectetur adipisicing
-                                elit. Adipisci soluta voluptatem enim cumque
-                                nulla asperiores consequuntur, fuga itaque autem nesciunt ex, maiores esse, reiciendis
-                                repudiandae sunt ut consequatur tempora. Veritatis.</p>
+                            <p class="descripcion-producto hidden">Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Perspiciatis soluta et vel eius labore corrupti sint laborum ducimus non, facilis
+                                voluptatum assumenda est accusantium ea, iste nam excepturi atque sed? Dicta modi id,
+                                excepturi libero non suscipit quo aut alias dolorem eum incidunt debitis quidem velit.
+                                Sunt minus et iusto!</p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -312,10 +317,11 @@
                         <div class="informacion-tarjeta">
                             <h4>Crema exfoliante de Caléndula</h4>
                             <p>500$</p>
-                            <p class="descripcion-producto-oculta">Lorem, ipsum dolor sit amet consectetur adipisicing
-                                elit. Adipisci soluta voluptatem enim cumque
-                                nulla asperiores consequuntur, fuga itaque autem nesciunt ex, maiores esse, reiciendis
-                                repudiandae sunt ut consequatur tempora. Veritatis.</p>
+                            <p class="descripcion-producto hidden">Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Animi quidem provident deserunt consequuntur porro, enim recusandae saepe facilis
+                                sunt similique labore! Blanditiis, reiciendis porro, corrupti aperiam consequuntur eius
+                                esse sunt quidem modi error adipisci praesentium iusto ipsam aut, deserunt delectus
+                                facere odit sequi ex accusamus? Necessitatibus, totam aliquam. Quos, voluptate.</p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -337,10 +343,11 @@
                         <div class="informacion-tarjeta">
                             <h4>Pasta dental en polvo</h4>
                             <p>250$</p>
-                            <p class="descripcion-producto-oculta">Lorem, ipsum dolor sit amet consectetur adipisicing
-                                elit. Adipisci soluta voluptatem enim cumque
-                                nulla asperiores consequuntur, fuga itaque autem nesciunt ex, maiores esse, reiciendis
-                                repudiandae sunt ut consequatur tempora. Veritatis.</p>
+                            <p class="descripcion-producto hidden">Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Dicta labore nisi magnam nesciunt vel vero dolorum reprehenderit, quas ullam
+                                architecto earum atque animi maxime voluptates, quae eos odio nihil. Illo amet quis
+                                asperiores quaerat repudiandae tenetur eaque, tempora nisi, possimus dolorem ducimus
+                                ipsum aut repellat commodi voluptate ex minus cupiditate?</p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="far fa-star"></i>
@@ -361,10 +368,11 @@
                         <div class="informacion-tarjeta">
                             <h4>Pasta dental en crema</h4>
                             <p>200$</p>
-                            <p class="descripcion-producto-oculta">Lorem, ipsum dolor sit amet consectetur adipisicing
-                                elit. Adipisci soluta voluptatem enim cumque
-                                nulla asperiores consequuntur, fuga itaque autem nesciunt ex, maiores esse, reiciendis
-                                repudiandae sunt ut consequatur tempora. Veritatis.</p>
+                            <p class="descripcion-producto hidden">Lorem ipsum dolor sit amet consectetur, adipisicing
+                                elit. Amet, odit quas laborum, maxime cupiditate repellendus error provident repellat
+                                placeat sint vero quibusdam necessitatibus doloribus sed, voluptate id ipsum eveniet.
+                                Commodi sunt ut aut odit eligendi tempore fuga. Aspernatur dignissimos repellat eius, a
+                                fugiat error laudantium inventore quam necessitatibus sequi vel.</p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -385,10 +393,11 @@
                         <div class="informacion-tarjeta">
                             <h4>Jabón de Coco</h4>
                             <p>200$</p>
-                            <p class="descripcion-producto-oculta">Lorem, ipsum dolor sit amet consectetur adipisicing
-                                elit. Adipisci soluta voluptatem enim cumque
-                                nulla asperiores consequuntur, fuga itaque autem nesciunt ex, maiores esse, reiciendis
-                                repudiandae sunt ut consequatur tempora. Veritatis.</p>
+                            <p class="descripcion-producto hidden">Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Neque voluptatibus quasi non possimus tenetur officiis nisi, repellendus magni?
+                                Aliquid quas doloribus perferendis mollitia amet? Ullam eum ipsam unde sint laboriosam,
+                                ea distinctio quae voluptates saepe incidunt, delectus nostrum esse a, quod vitae
+                                laudantium dicta perferendis quasi maiores est veritatis. Ut!</p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -409,10 +418,12 @@
                         <div class="informacion-tarjeta">
                             <h4>Jabón de Lavanda</h4>
                             <p>250$</p>
-                            <p class="descripcion-producto-oculta">Lorem, ipsum dolor sit amet consectetur adipisicing
-                                elit. Adipisci soluta voluptatem enim cumque
-                                nulla asperiores consequuntur, fuga itaque autem nesciunt ex, maiores esse, reiciendis
-                                repudiandae sunt ut consequatur tempora. Veritatis.</p>
+                            <p class="descripcion-producto hidden">Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Voluptatem saepe fugiat ut repellendus nemo consectetur quidem dolore maxime, at
+                                omnis tenetur doloribus, iste similique corporis magnam, unde labore amet? Quisquam
+                                consequatur esse odio ipsa suscipit delectus reprehenderit quidem similique officia
+                                maiores, consectetur expedita sit vitae quasi adipisci voluptatem, pariatur architecto?
+                            </p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -434,10 +445,11 @@
                         <div class="informacion-tarjeta">
                             <h4>Jabón de Caléndula</h4>
                             <p>300$</p>
-                            <p class="descripcion-producto-oculta">Lorem, ipsum dolor sit amet consectetur adipisicing
-                                elit. Adipisci soluta voluptatem enim cumque
-                                nulla asperiores consequuntur, fuga itaque autem nesciunt ex, maiores esse, reiciendis
-                                repudiandae sunt ut consequatur tempora. Veritatis.</p>
+                            <p class="descripcion-producto hidden">Lorem ipsum, dolor sit amet consectetur adipisicing
+                                elit. Accusantium velit provident cupiditate quae tempora labore, dolorem neque odit
+                                aliquid hic soluta quod assumenda ex adipisci laboriosam voluptate repellat culpa id.
+                                Doloribus iusto commodi optio quia architecto adipisci voluptatibus, praesentium,
+                                dolorum quos numquam nihil alias! Illo doloribus libero recusandae magni alias.</p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -458,10 +470,11 @@
                         <div class="informacion-tarjeta">
                             <h4>Aceite de Rosa Mosqueta</h4>
                             <p>450$</p>
-                            <p class="descripcion-producto-oculta">Lorem, ipsum dolor sit amet consectetur adipisicing
-                                elit. Adipisci soluta voluptatem enim cumque
-                                nulla asperiores consequuntur, fuga itaque autem nesciunt ex, maiores esse, reiciendis
-                                repudiandae sunt ut consequatur tempora. Veritatis.</p>
+                            <p class="descripcion-producto hidden">Lorem ipsum dolor sit, amet consectetur adipisicing
+                                elit. Laudantium est at veniam architecto odit alias perferendis optio? Deserunt
+                                excepturi sapiente officia sed illum libero vero numquam dolorum totam ad porro,
+                                corrupti nisi temporibus eum ducimus modi? Molestias et aperiam sint earum adipisci?
+                                Iure sequi sit libero unde nesciunt ullam omnis?.</p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -482,10 +495,11 @@
                         <div class="informacion-tarjeta">
                             <h4>Aceite de Jojoba</h4>
                             <p>500$</p>
-                            <p class="descripcion-producto-oculta">Lorem, ipsum dolor sit amet consectetur adipisicing
-                                elit. Adipisci soluta voluptatem enim cumque
-                                nulla asperiores consequuntur, fuga itaque autem nesciunt ex, maiores esse, reiciendis
-                                repudiandae sunt ut consequatur tempora. Veritatis.</p>
+                            <p class="descripcion-producto hidden">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                elit. Saepe, tempore? Expedita culpa eaque non iure cupiditate ipsam repudiandae, eum
+                                ipsa dolorum odit animi, cumque, similique quas itaque eveniet? Dolore, dolores,
+                                reiciendis ullam facilis nam quibusdam aliquid molestias voluptate vel perferendis
+                                soluta praesentium, impedit vitae! Reiciendis debitis eaque cumque quia incidunt?</p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -505,10 +519,11 @@
                         <div class="informacion-tarjeta">
                             <h4>Agua de Rosas</h4>
                             <p>400$</p>
-                            <p class="descripcion-producto-oculta">Lorem, ipsum dolor sit amet consectetur adipisicing
-                                elit. Adipisci soluta voluptatem enim cumque
-                                nulla asperiores consequuntur, fuga itaque autem nesciunt ex, maiores esse, reiciendis
-                                repudiandae sunt ut consequatur tempora. Veritatis.</p>
+                            <p class="descripcion-producto hidden">Lorem ipsum dolor sit, amet consectetur adipisicing
+                                elit. Blanditiis quibusdam provident ea iste obcaecati impedit perferendis natus officia
+                                ullam, aliquam rem facere exercitationem aspernatur perspiciatis, ipsa reprehenderit. Ea
+                                quo debitis vitae beatae delectus non totam, dolorum placeat praesentium at voluptate
+                                mollitia numquam maiores voluptatem, pariatur perspiciatis odio rerum rem ad!</p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -528,10 +543,11 @@
                         <div class="informacion-tarjeta">
                             <h4>Crema humectante de Aloe Vera</h4>
                             <p>500$</p>
-                            <p class="descripcion-producto-oculta">Lorem, ipsum dolor sit amet consectetur adipisicing
-                                elit. Adipisci soluta voluptatem enim cumque
-                                nulla asperiores consequuntur, fuga itaque autem nesciunt ex, maiores esse, reiciendis
-                                repudiandae sunt ut consequatur tempora. Veritatis.</p>
+                            <p class="descripcion-producto hidden">Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Amet eligendi beatae provident illum ex repellendus quisquam! Aperiam impedit odit
+                                mollitia quam distinctio, rem itaque, optio repellat illum soluta, architecto possimus
+                                quis eligendi? Animi molestiae alias at aliquam incidunt sequi, commodi, veniam
+                                similique placeat quas dignissimos. Labore facere dicta deleniti velit?</p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
