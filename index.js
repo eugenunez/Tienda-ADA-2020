@@ -5,6 +5,7 @@ const filtroCategoria = document.getElementsByClassName("review-filtro");
 const filtroPuntaje = document.querySelectorAll(".revisar-filtro");
 
 //Código para botón limpiar filtros
+
 botonLimpiar.onclick = () => {
   filtroBusqueda.value = ""
   for (let checkbox of filtroCategoria) {
