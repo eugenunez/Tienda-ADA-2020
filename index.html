@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-
+    
     <title>Tienda de Cosmética Natural</title>
 </head>
 
@@ -28,7 +28,7 @@
             <h2>Carrito</h2>
             <button class="cerrar-menu-carrito" aria-label="cerrar-el-carrito"><i
                     class="far fa-window-close"></i></button>
-            <p id="no-hay-productos" class="ocultar-parrafo">No tienes productos en el carrito, ¡agrega algunos!</p>
+            <p id="no-hay-productos" class="hidden">No tienes productos en el carrito, ¡agrega algunos!</p>
         </div>
 
         <article class="producto-en-carrito" id="lavanda" data-precio="400">
@@ -68,7 +68,7 @@
             <button class="vaciar-carrito">VACIAR</button>
         </div>
     </div>
-    <div class="ocultar-modal" id="modal-vaciar">
+    <div class="hidden" id="modal-vaciar">
         <p>Estás por vaciar el carrito, ¿Quiéres continuar?</p>
         <div class="botones-vaciar">
             <button id="boton-cancelar-eliminacion">CANCELAR</button>
@@ -81,7 +81,7 @@
     <div class="contenedor-checkout hidden" id="checkout">
         <div class="contenedor">
             <h2>Checkout</h2>
-            <div class="blabla">
+            <div class="estructura-checkout">
                 <div class="datos-personales-pago">
                     <form>
                         <h2>Datos personales</h2>
@@ -244,10 +244,10 @@
         <!--Comienzo de seccion de productos en grilla-->
         <section class="seccion-principal">
             <div class="vista-productos">
-                <div class="uno">
+                <div class="contador-vista-productos">
                     <p>Mostrando 12 producto(s) de 12</p>
                 </div>
-                <div class="dos">
+                <div class="botones-vista">
                     <p>Ver como</p>
                     <button><i class="fas fa-th"></i></button>
                     <button><i class="fas fa-list"></i></button>

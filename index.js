@@ -4,7 +4,7 @@ const tarjetas = document.querySelectorAll(".obtener-tarjeta");
 const filtroCategoria = document.getElementsByClassName("review-filtro");
 const filtroPuntaje = document.querySelectorAll(".revisar-filtro");
 
-
+//Código para botón limpiar filtros
 botonLimpiar.onclick = () => {
   filtroBusqueda.value = ""
   for (let checkbox of filtroCategoria) {
@@ -27,7 +27,7 @@ const ocultarTarjeta = (tarjeta) => {
   return tarjeta.classList.add("hidden")
 }
 
-//Codigo para Input//
+//Código para input de búsqueda//
 
 const hayAlgoEscritoEnElInput = () => {
   if (filtroBusqueda.value) {
@@ -74,7 +74,7 @@ const filtrarTarjetasInput = () => {
   }
 }
 
-//Codigo para CheckboxCategoria//
+//Código para CheckboxCategoria//
 
 const hayAlgunCheckboxCategoriaCheckeado = () => {
   for (let checkbox of filtroCategoria) {
@@ -126,7 +126,7 @@ const filtrarTarjetasCheckboxsCategoria = () => {
   }
 }
 
-//Codigo para CheckboxPuntaje//
+//Código para CheckboxPuntaje//
 
 const hayAlgunCheckboxPuntajeCheckeado = () => {
   for (let checkbox of filtroPuntaje) {
@@ -186,7 +186,7 @@ const pasaTodosLosFiltros = (tarjeta) => {
     return true
   }
 }
-//FILTROS RESPONSIVE
+//Código para filtros responsive
 
 const ventanaFiltrosResponsive = document.querySelector(".contenedor-filtros")
 const botonFiltro = document.querySelector(".boton-filtro")
@@ -204,36 +204,8 @@ botonCerrarFiltroResponsive.onclick = () => {
 
 }
 
-//AGREGAR PRODUCTOS AL CARRITO
 
-const productoAguaFloral = document.querySelector("#lavanda")
-const productoJabon = document.querySelector("#calendula")
-const inputUnidadesAguaFloral = document.querySelector("#unidades-agua-floral")
-const inputUnidadesJabon = document.querySelector("#unidades-jabon")
-const subtotalCarrito = document.getElementById("subtotal-producto")
-
-let precioTotalAguaFloral = 400
-let precioTotalJabon = 300
-let cantidadAguaFloral = inputUnidadesAguaFloral.value
-let cantidadJabon = inputUnidadesJabon.value
-
-inputUnidadesAguaFloral.oninput = () => {
-  if (inputUnidadesAguaFloral.value >= 0) {
-    cantidadAguaFloral = inputUnidadesAguaFloral.value
-    precioTotalAguaFloral = parseFloat(productoAguaFloral.dataset.precio) * cantidadAguaFloral
-    subtotalCarrito.textContent = precioTotalAguaFloral + precioTotalJabon
-  }
-}
-
-inputUnidadesJabon.oninput = () => {
-  if (inputUnidadesJabon.value >= 0) {
-    cantidadJabon = inputUnidadesJabon.value
-    precioTotalJabon = parseFloat(productoJabon.dataset.precio) * cantidadJabon
-    subtotalCarrito.textContent = precioTotalAguaFloral + precioTotalJabon
-  }
-}
-
-//CARRITO DESPLEGABLE
+//Código para menú carrito
 
 const botonAbrirCarrito = document.querySelector(".boton-carrito")
 const menuDesplegableCarrito = document.querySelector("#menu-carrito")
@@ -271,11 +243,11 @@ botonCerrarCarrito.onclick = () => {
 }
 
 botonVaciarCarrito.onclick = () => {
-  ModalVaciarCarrito.classList.remove("ocultar-modal")
+  ModalVaciarCarrito.classList.remove("hidden")
 }
 
 botonCancelarEliminarProductos.onclick = () => {
-  ModalVaciarCarrito.classList.add("ocultar-modal")
+  ModalVaciarCarrito.classList.add("hidden")
 
 }
 botonVaciarDefinitivamenteElCarrito.onclick = () => {
@@ -283,8 +255,8 @@ botonVaciarDefinitivamenteElCarrito.onclick = () => {
   productoAguaFloral.classList.add("hidden")
   h3SubtotalCarrito.classList.add("hidden")
   botonesComenzarCompra.classList.add("hidden")
-  ModalVaciarCarrito.classList.add("ocultar-modal")
-  parrafoNoHayProductosEnCarrito.classList.remove("ocultar-parrafo")
+  ModalVaciarCarrito.classList.add("hidden")
+  parrafoNoHayProductosEnCarrito.classList.remove("hidden")
   inputUnidadesAguaFloral.value = 0
   inputUnidadesJabon.value = 0
   inputUnidadesAguaFloral.oninput()
@@ -292,9 +264,36 @@ botonVaciarDefinitivamenteElCarrito.onclick = () => {
 
 }
 
+//Código para agregar productos al carrito
 
+const productoAguaFloral = document.querySelector("#lavanda")
+const productoJabon = document.querySelector("#calendula")
+const inputUnidadesAguaFloral = document.querySelector("#unidades-agua-floral")
+const inputUnidadesJabon = document.querySelector("#unidades-jabon")
+const subtotalCarrito = document.getElementById("subtotal-producto")
 
-//CODIGO PARA CHECKOUT CARRITO
+let precioTotalAguaFloral = 400
+let precioTotalJabon = 300
+let cantidadAguaFloral = inputUnidadesAguaFloral.value
+let cantidadJabon = inputUnidadesJabon.value
+
+inputUnidadesAguaFloral.oninput = () => {
+  if (inputUnidadesAguaFloral.value >= 0) {
+    cantidadAguaFloral = inputUnidadesAguaFloral.value
+    precioTotalAguaFloral = parseFloat(productoAguaFloral.dataset.precio) * cantidadAguaFloral
+    subtotalCarrito.textContent = precioTotalAguaFloral + precioTotalJabon
+  }
+}
+
+inputUnidadesJabon.oninput = () => {
+  if (inputUnidadesJabon.value >= 0) {
+    cantidadJabon = inputUnidadesJabon.value
+    precioTotalJabon = parseFloat(productoJabon.dataset.precio) * cantidadJabon
+    subtotalCarrito.textContent = precioTotalAguaFloral + precioTotalJabon
+  }
+}
+
+//Código para checkout carrito
 
 const subtotal = document.querySelector('#subtotal');
 const total = document.querySelector('#total');
@@ -437,7 +436,7 @@ const estaChequeadoEnvio = () => {
   }
 };
 
-//Codigo para boton que da la vista de productos en grilla o lista
+//Código para boton que da la vista de productos en grilla o lista
 
 const botonListaDeProductos = document.querySelector(".fa-list");
 const botonGrillaDeProductos = document.querySelector(".fa-th");
