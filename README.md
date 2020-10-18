@@ -6,16 +6,11 @@ _Nature Cosmetic Store, Your green beauty shop with the best brands 100% natural
 The store was created using the following tools
 
 - HTML
-- CSS
+- CSS 
 - JS
 
- ![Technology](https://altruistas.org/wp-content/uploads/2020/06/JavaScript-Radio-Altruistas-Las-Palmas-Ocio.jpg)
-
- 
-
-## HOW TO USE IT
-
-URL:https://eugenunez.github.io/Tienda-ADA-2020/
+## USAGE
+The store its deployed in the following [url](https://eugenunez.github.io/Tienda-ADA-2020/)
 
 ## Contributing
 
@@ -28,4 +23,4 @@ Contributions are what make the open source community such an amazing place to b
 5. Open a Pull Request
 
 ---
-⌨️ con ❤️ por [eugenunez](https://github.com/eugenunez/) 😊
+⌨️ created with ❤️ by [Eugenunez](https://github.com/eugenunez/) 😊
